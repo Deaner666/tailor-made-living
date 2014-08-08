@@ -29,6 +29,7 @@
 // Is Woocommerce installed?
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 
+
     //////////////////////////////////////////////////
     // 
     // Plugin activation
@@ -58,6 +59,31 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
         wp_enqueue_style( 'file_upload_modal', plugins_url('/css/file_upload_modal.css', __FILE__ ) );
         wp_enqueue_style( 'jquery-ui', plugins_url('/css/jquery-ui.css', __FILE__ ) );
     }
+
+    //////////////////////////////////////////////////
+    // 
+    // Hook into single-product.php to add image upload modal
+    // 
+    //////////////////////////////////////////////////
+
+    add_action('woocommerce_after_single_product_summary', 'mtd_image_upload_modal');
+
+    function mtd_image_upload_modal() {
+        include_once 'templates/image-upload-modal.php';
+    }
+
+    //////////////////////////////////////////////////
+    // 
+    // Plugin deactivation
+    // 
+    //////////////////////////////////////////////////
+
+    function wpf_deactivation() {
+        // Deactivation code here
+    }
+    
+    register_deactivation_hook(__FILE__, 'wpf_deactivation');
+
 
 } // end WooCommerce detection
 

@@ -54,6 +54,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
         wp_enqueue_script( 'jquery-ui-core' );
         wp_enqueue_script( 'jquery-ui-widget' );
         wp_enqueue_script( 'jquery-ui-dialog' );
+        wp_enqueue_script( 'jquery-form' );
         wp_enqueue_script( 'image_editor', plugins_url('/js/image_editor.js', __FILE__ ), array( 'jquery' ) );
         wp_enqueue_script( 'file_upload_modal', plugins_url('/js/file_upload_modal.js', __FILE__ ), array( 'jquery-ui-widget' ) );
         wp_enqueue_style( 'file_upload_modal', plugins_url('/css/file_upload_modal.css', __FILE__ ) );

@@ -1,5 +1,7 @@
 .ui-dialog-titlebar { display: none; }
 
+#image-upload-form { width: 48%; float: left; }
 #image-upload-form ul.form-fields li { list-style-type: none; }
 #image-upload-form input { margin-bottom: 1.2em; }
 #image-upload-form label { font-size: .8em; }
+#image-upload-preview { width: 48%; float: right; }

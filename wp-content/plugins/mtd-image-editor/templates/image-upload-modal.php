@@ -33,27 +33,29 @@
 
 	<!-- Instantiate Feather -->
 	<script type='text/javascript'>
-	   var featherEditor = new Aviary.Feather({
-	       apiKey: 'aeae8484a8800725',
-	       apiVersion: 3,
-	       theme: 'light', // Check out our new 'light' and 'dark' themes!
-	       tools: 'all',
-	       appendTo: '',
-	       onSave: function(imageID, newURL) {
-	           var img = document.getElementById(imageID);
-	           img.src = newURL;
-	       },
-	       onError: function(errorObj) {
-	           alert(errorObj.message);
-	       }
-	   });
-	   function launchEditor(id, src) {
-	       featherEditor.launch({
-	           image: id,
-	           url: src
-	       });
-	      return false;
-	   }
+		var featherEditor = new Aviary.Feather({
+	    	apiKey: 'aeae8484a8800725',
+	    	apiVersion: 3,
+	    	theme: 'light', // Check out our new 'light' and 'dark' themes!
+	    	tools: 'all',
+	      	forceCropPreset: ['Wall Dimensions', '300x200'],
+			forceCropMessage: 'Crop your image to the size of your wall',
+	    	appendTo: '',
+	    	onSave: function(imageID, newURL) {
+	        	var img = document.getElementById(imageID);
+	        	img.src = newURL;
+	    	},
+	    	onError: function(errorObj) {
+	        	alert(errorObj.message);
+	    	}
+		});
+		function launchEditor(id, src) {
+	    	featherEditor.launch({
+	    		image: id,
+	        	url: src
+	    	});
+	    	return false;
+		}
 	</script>
 
 	<div id='injection_site'></div>

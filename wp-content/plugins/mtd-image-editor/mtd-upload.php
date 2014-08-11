@@ -7,7 +7,9 @@ global $post, $woocommerce, $product;
 $file_formats = array("jpg", "png", "gif"); // Set File format
 // $upload_dir = wp_upload_dir();
 // $filepath = $upload_dir['path'];
-$filepath = "/Users/Dave/php_apps/tailormadelive/wp-content/uploads/2014/08/";
+echo $get_site_url;
+$filepath = get_site_url() . "/wp-content/uploads/2014/08";
+echo $filepath;
 // $max_size = 2048 * 1024;
 $max_size = 2097152;
 
@@ -19,10 +21,12 @@ if ($_POST['form-submit']=="Upload") {
       $extension = substr($name, strrpos($name, '.')+1);
       if (in_array($extension, $file_formats)) { 
           if ($size < $max_size) {
-             $imagename = $name . md5(uniqid().time()).".".$extension;
+             $imagename = md5(uniqid().time()).".".$extension;
              $tmp = $_FILES['form-image']['tmp_name'];
-             if (move_uploaded_file($tmp, $filepath . $imagename)) {
-		 echo '<img class="preview" alt="" src="'.$filepath.'/'. 
+             if (move_uploaded_file($tmp, $filepath.'/'.$imagename)) {
+		 echo '<p>$filepath = '.$filepath.'</p>';
+     echo '<p>$imagename = '.$imagename.'</p>';
+     echo '<img class="preview" alt="" src="'.$filepath.'/'. 
 			$imagename .'" />';
 	     } else {
 		 echo "Could not move the file.";

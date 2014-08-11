@@ -1,45 +1,25 @@
 <?php
-
-// if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+echo ABSPATH;
+if ( ! function_exists( 'wp_handle_upload' ) ) require_once( ABSPATH . 'wp-admin/includes/file.php' );
 
 global $post, $woocommerce, $product;
 
-$file_formats = array("jpg", "png", "gif"); // Set File format
-// $upload_dir = wp_upload_dir();
-// $filepath = $upload_dir['path'];
-echo $get_site_url;
-$filepath = get_site_url() . "/wp-content/uploads/2014/08";
-echo $filepath;
-// $max_size = 2048 * 1024;
-$max_size = 2097152;
+if(isset($_FILES['form-image']) && ($_FILES['form-image']['size'] > 0)) {
 
-if ($_POST['form-submit']=="Upload") {
-  $name = $_FILES['form-image']['name'];
-  $size = $_FILES['form-image']['size'];
+	// Set an array containing a list of acceptable formats
+	$allowed_file_types = array('image/jpg','image/jpeg','image/gif','image/png');
+	// Get the type of the uploaded file. This is returned as "type/extension"
+    // $arr_file_type = wp_check_filetype(basename($_FILES['form-image']['name']));
+    // $uploaded_file_type = $arr_file_type['type'];
 
-   if (strlen($name)) {
-      $extension = substr($name, strrpos($name, '.')+1);
-      if (in_array($extension, $file_formats)) { 
-          if ($size < $max_size) {
-             $imagename = md5(uniqid().time()).".".$extension;
-             $tmp = $_FILES['form-image']['tmp_name'];
-             if (move_uploaded_file($tmp, $filepath.'/'.$imagename)) {
-		 echo '<p>$filepath = '.$filepath.'</p>';
-     echo '<p>$imagename = '.$imagename.'</p>';
-     echo '<img class="preview" alt="" src="'.$filepath.'/'. 
-			$imagename .'" />';
-	     } else {
-		 echo "Could not move the file.";
-	     }
-	  } else {
-		echo "Your image size is bigger than 2MB.";
-	  }
-       } else {
-	       echo "Invalid file format.";
-       }
-  } else {
-       echo "Please select image..!";
-  }
-exit();
-}
+    // If the uploaded file is the right format
+    // if(in_array($uploaded_file_type, $allowed_file_types)) {
+
+    // }
+
+} // end if exists form-image
+
+echo "You've reached mtd-upload.php";
+
+
 ?>

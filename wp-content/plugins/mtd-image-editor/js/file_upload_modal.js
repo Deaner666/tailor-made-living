@@ -24,7 +24,7 @@ jQuery(document).ready( function() {
 
   jQuery('#form-submit').click(function() {
     jQuery("#image-upload-preview").html('');
-    jQuery("#image-upload-preview").html('<p>Loading...</p><img src="' + mtd_site_url + '/wp-content/plugins/mtd-image-editor/images/loading.gif" />');
+    jQuery("#image-upload-preview").html('<img src="' + mtd_site_url + '/wp-content/plugins/mtd-image-editor/images/loading.gif" />');
     jQuery("#image-upload-form").ajaxForm({ target: '#image-upload-preview' }).submit();
   });
 

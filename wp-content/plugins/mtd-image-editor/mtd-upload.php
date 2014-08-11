@@ -1,15 +1,13 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-// if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+require_once( dirname( dirname( dirname( dirname( __FILE__ )))) . '/wp-load.php' );
 
-global $post, $woocommerce, $product;
+// global $post, $woocommerce, $product;
 
 $file_formats = array("jpg", "png", "gif"); // Set File format
-// $upload_dir = wp_upload_dir();
-// $filepath = $upload_dir['path'];
-echo $get_site_url;
-$filepath = get_site_url() . "/wp-content/uploads/2014/08";
-echo $filepath;
+$upload_dir = wp_upload_dir();
+$filepath = $upload_dir['url'];
 // $max_size = 2048 * 1024;
 $max_size = 2097152;
 

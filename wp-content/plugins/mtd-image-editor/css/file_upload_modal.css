@@ -5,3 +5,5 @@
 #image-upload-form input { margin-bottom: 1.2em; }
 #image-upload-form label { font-size: .8em; }
 #image-upload-preview { width: 48%; float: right; }
+
+#aviary-edit-button { display: none; }

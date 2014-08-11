@@ -31,6 +31,10 @@
 		<div id="image-upload-preview"></div>
 	</article>
 
+	<div id="aviary-edit-button">
+		<a href="javascript:;">Edit Photo</a>
+	</div>
+
 </section>
 
 <?php

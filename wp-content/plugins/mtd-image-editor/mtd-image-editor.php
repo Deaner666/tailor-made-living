@@ -56,6 +56,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
         wp_enqueue_script( 'jquery-ui-dialog' );
         wp_enqueue_script( 'jquery-form' );
         wp_enqueue_script( 'image_editor', plugins_url('/js/image_editor.js', __FILE__ ), array( 'jquery' ) );
+        wp_enqueue_script( 'aviary_editor', 'http://feather.aviary.com/js/feather.js' );
         wp_register_script( 'file_upload_modal', plugins_url('/js/file_upload_modal.js', __FILE__ ), array( 'jquery-ui-widget' ) );
         // Pass site_url info to file_upload_modal JS file
         wp_localize_script( 'file_upload_modal', 'mtd_site_url', get_site_url() );

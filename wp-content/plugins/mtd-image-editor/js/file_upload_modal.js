@@ -32,6 +32,7 @@ jQuery(document).ready( function() {
                                                                 'src',
                                                                 jQuery(".preview").attr('src')
                                                               );
+                                    jQuery(".wp-post-image").attr('id', 'aviary-image');
                                     jQuery('#aviary-edit-button').show();
                                   }
                                 }).submit();

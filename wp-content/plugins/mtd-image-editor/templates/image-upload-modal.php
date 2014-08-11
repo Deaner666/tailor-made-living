@@ -18,7 +18,7 @@
 			<h1>Upload your image</h1>
 		</header>
 
-		<form id="image-upload-form" method="post" action="<?php echo $form_action ?>" enctype="multipart/form-data">
+		<form id="image-upload-form" name="image-upload-form" method="post" action="<?php echo $form_action ?>" enctype="multipart/form-data">
 			<ul class="form-fields">
 				<li>
 					<div class="form-label"><label for="form-image">Choose an image to upload</label></div>

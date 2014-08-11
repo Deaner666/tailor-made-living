@@ -73,7 +73,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
     // 
     //////////////////////////////////////////////////
 
-    add_action('woocommerce_single_product_summary', 'mtd_image_upload_modal', 20);
+    add_action('woocommerce_single_product_summary', 'mtd_image_upload_modal', 30);
 
     function mtd_image_upload_modal() {
         include_once 'templates/image-upload-modal.php';

@@ -38,8 +38,6 @@
 	    	apiVersion: 3,
 	    	theme: 'light', // Check out our new 'light' and 'dark' themes!
 	    	tools: 'all',
-	      	forceCropPreset: ['Wall Dimensions', '300x200'],
-			forceCropMessage: 'Crop your image to the size of your wall',
 	    	appendTo: '',
 	    	onSave: function(imageID, newURL) {
 	        	var img = document.getElementById(imageID);
@@ -52,7 +50,9 @@
 		function launchEditor(id, src) {
 	    	featherEditor.launch({
 	    		image: id,
-	        	url: src
+	        	url: src,
+	        	forceCropPreset: ['Wall Dimensions', '300x200'],
+				forceCropMessage: 'Crop your image to the size of your wall'
 	    	});
 	    	return false;
 		}

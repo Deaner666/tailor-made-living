@@ -1,22 +1,23 @@
 @import url(mixins.less);
 
 /* Colours */
-@amano-blue: #000149;
-@amano-light-blue: #e0ebf3;
-@amano-dark-orange: #ff9e21;
-@amano-light-orange: #ffb800;
+@tailormade-blue: #212d58;
+@tailormade-light-blue: #eff5fa;
+@tailormade-red: #e60600;
+@tailormade-yellow: #ffe400;
 
 /* Fonts */
-@lato: "Lato", sans-serif;
+@raleway: "Raleway", sans-serif;
+@satisfy: "Satisfy", serif;
 
 body {
   margin: 0 auto !important; max-width: 75.998em;
-  background: #fff url('images/layout/site-background.jpg') top center no-repeat fixed; padding: 0;
+  background: #fff url('images/layout/page-background.jpg') top center no-repeat fixed; padding: 0;
   background-size: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: @lato; color: @amano-blue; font-weight: normal;
+  font-family: @raleway; color: @tailormade-blue; font-weight: normal;
 }
 h1, h2, h3 { text-transform: uppercase; }
 /*h2 { color: #1e9ead; }*/
@@ -33,14 +34,8 @@ Masthead
 #top {
   background: none;
   
-  .amano-tel {
-    margin-left: 20%; margin-top: 15px; float: left;
-    font-family: @lato; font-size: 1.4em; font-weight: bold; color: @amano-blue;
-    .small-text { font-size: .8em; font-weight: normal; }
-  }
-
-  .amano-top-nav {
-    float: right; width: 40%; background: @amano-blue;
+  .top-nav-block {
+    float: right; width: 40%; background: @tailormade-blue;
     .border_radius_bottom(8px);
     ul#top-nav {
       width: 90%; left: 5%;
@@ -48,9 +43,9 @@ Masthead
         width: 25%;
         a {
           margin: 0; padding: 13px 0 13px 0; text-align: center;
-          color: white; font-family: @lato; text-transform: uppercase;
+          color: white; font-family: @raleway; text-transform: uppercase;
         }
-        a:hover { color: @amano-blue; }
+        a:hover { color: @tailormade-blue; }
       }
     }
   }
@@ -60,41 +55,8 @@ Masthead
 
 /* Logo */
 #header .site-title {
-  width: 15%; margin: -50px 0 20px 2%; padding: 0; float: left;
+  width: 40%; margin: -20px 0 20px 2%; padding: 0; float: left;
   img { width: 90%; max-width: 90%; margin: 20px 5% 0 5%; padding: 0; }
-}
-
-/* Search box */
-#strap-and-search {
-  float: left; width: 49%; margin-top: 30px; margin-left: 7%;
-
-  .strapline {
-    font-family: @lato; font-size: 35px; font-style: italic;
-    color: @amano-blue; width: 100%; margin-bottom: 5%;
-  }
-
-  ul.wc-search {
-    float: left; margin-left: 17%;
-    li { width: 100%; }
-    label { display: none; }
-    input.input-text {
-      margin: 0; padding: 0; border: 1px solid @amano-blue; width: 250px;
-      height: 35px; background-color: rgba(255,255,255,0.5);
-      .border_radius(0); .box_shadow(0,0,0,0);
-    }
-    input.input-text:hover { background-color: rgba(255,255,255,1); }
-    input#searchsubmit {
-      padding: 0; margin: 0 0 0 -4px; height: 35px; width: 34px;
-      border: none; text-indent: -9999px;
-      background: url('images/layout/search-button.png') top left no-repeat;
-      background-size: 100% 100%;
-      .border_radius(0); .box_shadow(0,0,0,0);
-    }
-  }
-}
-@-moz-document url-prefix() {
-  #strap-and-search ul.wc-search input.input-text { float: left; }
-  #strap-and-search ul.wc-search input#searchsubmit { float: left; }
 }
 
 /* Social buttons */
@@ -103,13 +65,10 @@ Masthead
 
   ul.social-buttons {
     list-style-type: none; display: block;
-    margin: 10px 2% 10px 0; width: 130.5px; float: right;
+    margin: 50px 2% 0 0; width: 169.5px; float: right;
     li a {
       float: left; text-indent: -9999px; display: block;
       margin-right: 5px; width: 35.5px; height: 35.5px;
-    }
-    li a:hover {
-      float: left; opacity: 1;
     }
     li.twitter a {
       background: url('images/icons/twitter-icon.png') top left no-repeat;
@@ -119,35 +78,29 @@ Masthead
       background: url('images/icons/facebook-icon.png') top left no-repeat;
       background-size: 100% 100%;
     }
+    li.pinterest a {
+      background: url('images/icons/pinterest-icon.png') top left no-repeat;
+      background-size: 100% 100%;
+    }
     li.google-plus a {
       background: url('images/icons/google-plus-icon.png') top left no-repeat;
       margin-right: 0; background-size: 100% 100%;
     }
   }
 
-  /* TODO */
-  #colour-picker {
-    height: 23.5px; margin-bottom: 10px;
-  }
-
-  /* TODO */
-  #font-size-picker {
-    height: 23.5px; margin-bottom: 10px;
-  }
-
   /* Cart */
   .wc-cart {
-    width: 90%; margin: 26% 5.5% 0 0; border: 1px solid @amano-blue; border-bottom: 0;
+    width: 90%; margin: 20% 5.5% 0 0; border: 1px solid @tailormade-blue; border-bottom: 0;
     height: 45px; background-color: rgba(255,255,255,0.5); z-index: 1;
     float: right;
     .border_radius_top(4px);
 
     li { padding-top: 4px; }
     li a {
-      font-family: @lato; text-transform: uppercase;
-      font-weight: normal; color: @amano-blue; padding-right: 5px;
+      font-family: @raleway; text-transform: uppercase;
+      font-weight: normal; color: @tailormade-blue; padding-right: 5px;
     }
-    li a:hover { color: @amano-dark-orange; }
+    li a:hover { color: @tailormade-red; }
     li.cart-icon {
       width: 8%; margin-left: 4%; margin-top: 2%;
     }
@@ -164,27 +117,27 @@ Masthead
   .border_radius(0);
 }
 #header #navigation {
-  clear: both; width: 100%; margin: 0 0 40px 0; padding: 0; background: @amano-blue;
+  clear: both; width: 100%; margin: 0 0 40px 0; padding: 0; background: @tailormade-blue;
   .border_radius(0); z-index: 10; height: 70px;
   ul {
     width: 100%; margin: 0; padding: 0; float: none;
     li { width: 16%; background: none; height: 70px; padding: 0 2% 0 2%; }
     li:hover {
-      background: @amano-light-blue;
-      a { color: @amano-blue !important; background-color: @amano-light-blue !important; }
+      background: @tailormade-light-blue;
+      a { color: @tailormade-blue !important; background-color: @tailormade-light-blue !important; }
     }
   }
   ul.nav > li a {
     width: 100%; background: none; margin: 0; padding: 13px 0 0 0;
     border: 0; text-align: center; color: #fff; font-weight: bold; height: 57px;
-    font-family: @lato; font-size: 14px; text-transform: uppercase;
+    font-family: @raleway; font-size: 14px; text-transform: uppercase;
   }
   ul.nav > li a:hover {
-    background: none; color: @amano-light-blue;
+    background: none; color: @tailormade-light-blue;
   }
   ul.nav > li.current-menu-item > a,
   ul.nav > li.current_page_item > a {
-    color: @amano-light-orange; font-weight: bold;
+    color: @tailormade-yellow; font-weight: bold;
   }
 }
 
@@ -211,7 +164,7 @@ Masthead
     font-size: .857em; margin-left: .618em; content: ";";
     color: #fff; font-weight: normal;
   }
-#header #navigation ul.nav > li.parent:hover a:after { color: @amano-blue; }
+#header #navigation ul.nav > li.parent:hover a:after { color: @tailormade-blue; }
 
 
 /*-------------------------------------------------------*

@@ -24,7 +24,8 @@ global $woo_options, $woocommerce;
 <?php woo_meta(); ?>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" media="screen" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,500' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
 <?php
 	wp_head();
 	woo_head();
@@ -38,10 +39,7 @@ global $woo_options, $woocommerce;
 <div id="wrapper">
 
 	<div id="top">
-		<div class="amano-tel">
-			<span class="small-text">Call us on</span> 01822 600060
-		</div>
-		<nav class="amano-top-nav" role="navigation">
+		<nav class="top-nav-block" role="navigation">
 			<?php if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'top-menu' ) ) { ?>
 			<?php wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'top-nav', 'menu_class' => 'nav fl', 'theme_location' => 'top-menu' ) ); ?>
 			<?php } ?>
@@ -54,36 +52,22 @@ global $woo_options, $woocommerce;
 
 	    <h1 class="site-title">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<img src="<?php echo site_url(); ?>/wp-content/themes/mystile_child/images/layout/amano-logo.png" alt="<?php bloginfo( 'name' ); ?>" />
+				<img src="<?php echo site_url(); ?>/wp-content/themes/mystile_child/images/layout/tailor-made-logo.png" alt="<?php bloginfo( 'name' ); ?>" />
 			</a>
 		</h1>
-
-		<div id="strap-and-search">
-			<div class="strapline">Technology for Independent Living</div>
-		    <?php
-				if ( class_exists( 'woocommerce' ) ) {
-					echo '<ul class="nav wc-nav wc-search">';
-					echo get_search_form();
-					echo '</ul>';
-				}
-			?>
-		</div>
 
 		<div id="social-and-cart">
 			<ul class="social-buttons">
 				<li class="twitter"><a href="#">Twitter</a></li>
 				<li class="facebook"><a href="#">Facebook</a></li>
+				<li class="pinterest"><a href="#">Pinterest</a></li>
 				<li class="google-plus"><a href="#">Google+</a></li>
 			</ul>
-
-			<div id="colour-picker"></div>
-
-			<div id="font-size-picker"></div>
 
 			<?php
 				if ( class_exists( 'woocommerce' ) ) {
 					echo '<ul class="nav wc-nav wc-cart">';
-					echo '<li class="cart-icon"><img src="'.site_url().'/wp-content/themes/mystile_child/images/icons/cart-icon.png" alt="" /></li>';
+					echo '<li class="cart-icon"><img src="'.site_url().'/wp-content/themes/mystile_child/images/icons/shopping-basket-icon.png" alt="" /></li>';
 					woocommerce_cart_link();
 					echo '<li class="checkout"><a href="'.esc_url($woocommerce->cart->get_checkout_url()).'">'.__('Checkout','woothemes').'</a></li>';
 					echo '</ul>';

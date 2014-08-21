@@ -16,7 +16,7 @@ if(isset($_FILES['form-image']) && ($_FILES['form-image']['size'] > 0)) {
   $arr_file_type = wp_check_filetype(basename($_FILES['form-image']['name']));
   $uploaded_file_type = $arr_file_type['type'];
   // Set the max size of a file upload
-  $max_size = 1638400;
+  $max_size = 2100000;
               
   // If the uploaded file is the right format
   if(in_array($uploaded_file_type, $allowed_file_types)) {
@@ -28,7 +28,7 @@ if(isset($_FILES['form-image']) && ($_FILES['form-image']['size'] > 0)) {
         echo '<img class="preview" alt="" src="'.$movefile['url'].'" />';
       } else { echo "Error: Could not move the file"; } // end if isset $movefile
     } else { echo "Error: File is larger than 16MB"; } // end if < $max_size
-  } else { echo "Error: File is not a JPEG, GIFF or PNG image"; } // end if in $allowed_file_types
+  } else { echo "Error: File is not a JPEG, GIF or PNG image"; } // end if in $allowed_file_types
 
 } // end if exists form-image
 

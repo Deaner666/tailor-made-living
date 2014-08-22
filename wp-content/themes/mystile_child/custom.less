@@ -118,19 +118,19 @@ Masthead
 }
 #header #navigation {
   clear: both; width: 100%; margin: 0 0 40px 0; padding: 0; background: @tailormade-blue;
-  .border_radius(0); z-index: 10; height: 70px;
+  .border_radius(0); z-index: 10; height: 60px;
   ul {
     width: 100%; margin: 0; padding: 0; float: none;
-    li { width: 16%; background: none; height: 70px; padding: 0 2% 0 2%; }
+    li { width: 16%; background: none; height: 60px; padding: 0 2% 0 2%; }
     li:hover {
       background: @tailormade-light-blue;
       a { color: @tailormade-blue !important; background-color: @tailormade-light-blue !important; }
     }
   }
   ul.nav > li a {
-    width: 100%; background: none; margin: 0; padding: 13px 0 0 0;
-    border: 0; text-align: center; color: #fff; font-weight: bold; height: 57px;
-    font-family: @raleway; font-size: 14px; text-transform: uppercase;
+    width: 100%; background: none; margin: 0; padding: 16px 0 0 0;
+    border: 0; text-align: center; color: #fff; height: 47px;
+    font-family: @satisfy; font-size: 18px;
   }
   ul.nav > li a:hover {
     background: none; color: @tailormade-light-blue;
@@ -173,15 +173,8 @@ Content
 
 #content {
   background: #fff; padding: 2%; width: 96%;
-  -webkit-border-top-left-radius: 8px;
-  -webkit-border-top-right-radius: 8px;
-  -moz-border-radius-topleft: 8px;
-  -moz-border-radius-topright: 8px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  -webkit-box-shadow: 0px 0px 20px rgba(50, 50, 50, 0.2);
-  -moz-box-shadow:    0px 0px 20px rgba(50, 50, 50, 0.2);
-  box-shadow:         0px 0px 20px rgba(50, 50, 50, 0.2);
+  .border_radius_top(8px);
+  .box_shadow(0px, 0px, 20px, 0px, rgba(50, 50, 50, 0.2));
 }
 
 
@@ -212,66 +205,88 @@ Incidentals
 *-------------------------------------------------------*/
 
 body.home #breadcrumbs { display: none; }
-
-.wooslider {
-  border: none;
-  -webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
-  -moz-box-shadow: 0 0 0 rgba(0,0,0,0);
-  -o-box-shadow: 0 0 0 rgba(0,0,0,0);
-  box-shadow: 0 0 0 rgba(0,0,0,0);
+h1#home-page-header {
+  font-family: @satisfy; color: @tailormade-red; text-transform: none;
+  text-align: center; font-size: 3.5em; margin: .5em 0 1em 0;
 }
-/* Clearfix for Wooslider */
-.wooslider:before,
-.wooslider:after { content: " "; /* 1 */ display: table; /* 2 */ }
-.wooslider:after {clear: both; }
-/* For IE 6/7 only */
-.wooslider { *zoom: 1; }
-
-.browse-maps-button { opacity: 0.5; border: none !important; }
-.browse-maps-button:hover { opacity: 1; }
+h2#page-bottom-header {
+  font-family: @satisfy; color: @tailormade-red; text-transform: none;
+  text-align: center; font-size: 3.4em; margin: .5em 0 1em 0;
+}
 
 .indented { margin-left: 3em; }
 
 /* Generic feature blocks */
-.mid-grey { background: #eaedf0; }
-.light-grey { background: #f5f8fa; }
 .full-width-feature {
-  margin-right: -2%; margin-left: -2%; padding: 4% 2% 0 2%; clear: both;
+  margin-right: -2%; margin-left: -2%; padding: 0;
+  clear: both; .clearfix();
+  h1 { color: #fff; }
+  h2 { font-size: 1.4em; color: #fff; line-height: 1.7; }
+  .blurb { width: 24%; text-align: center;
+    p { color: #fff; }
+    ul {
+      text-align: left; margin-left: 2.2em; color: #fff;
+      font-family: @raleway; font-size: 1.15em;
+    }
+  }
+  img { width: 74%; height: auto; margin: 0; padding: 0; border: none; }
+  .pull-left { float: left; }
+  .pull-right { float: right; }
 }
-.full-width-feature h1 { color: #e60600; }
-.full-width-feature h2 { font-size: 1.4em; }
-.full-width-feature .blurb { width: 24%; text-align: center; }
-.full-width-feature .blurb ul {
-  text-align: left; margin-left: 2.2em;
-  font-family: 'Raleway', sans-serif; font-size: 1.15em;
+.dark { background: @tailormade-blue; }
+.light {
+  background: @tailormade-light-blue;
+  h1 { color: @tailormade-blue; }
+  h2 { font-size: 1.4em; color: @tailormade-blue; line-height: 1.7; }
+  .blurb { width: 24%; text-align: center;
+    p { color: @tailormade-blue; }
+    ul {
+      text-align: left; margin-left: 2.2em; color: @tailormade-blue;
+      font-family: @raleway; font-size: 1.15em;
+    }
+  }
 }
-.full-width-feature img { width: 74%; height: auto; margin-bottom: 0; padding: 0; border: none; }
-.full-width-feature .pull-left { float: left; }
-.full-width-feature .pull-right { float: right; }
 
 /* Specific feature block overrides */
-#choose-your-perfect-print { padding-top: 8%; }
-#choose-your-perfect-print .blurb { margin-top: 3%; }
-#pick-your-product { padding: 0 5% 0 0; margin-bottom: 3.236em; }
-#pick-your-product img { width: 64%; }
-#pick-your-product .blurb { width: 34%; margin-top: 10%; }
-#add-the-finest-frame { padding-top: 0; padding-left: 0; }
-#add-the-finest-frame img { width: 64%; }
-#add-the-finest-frame .blurb { width: 34%; margin-top: 10%; margin-right: 2%; }
-#add-the-finest-frame .blurb ul { margin-left: 3.65em; }
-#we-sweat-the-details { margin-bottom: 3.236em; padding-right: 0; }
-#we-sweat-the-details img { width: 68%; }
-#we-sweat-the-details .blurb { margin-top: 6%;  width: 30%; }
+#picture-perfect {
+  padding-top: 0;
+  .blurb { padding: 7% 0 0 5%; width: 35%; }
+  img { margin: 0 0 0 -5%; }
+}
+#easy-peasy-editing {
+  padding: 0 5% 0 0;
+  img { width: 64%; }
+  .blurb { width: 32%; margin: 10% 3% 0 -5%; }
+}
+#closing-statement { padding-top: 5%; }
+#make-a-statement {
+  width: 50%; float: left;
+  img { width: 90%; margin: 5% 5% 5% 5%; }
+  .blurb { width: 80%; margin: 0 10% 10% 10%; }
+}
+#tailor-made-emphasis {
+  width: 50%; clear: none; float: right;
+  img { width: 57%; margin: 5% 21.5% 5% 21.5%; }
+  .blurb { width: 80%; margin: 0 10% 10% 10%; }
+}
 
-/*-------------------------------------------------------*
-Clearfix
-*-------------------------------------------------------*/
-
-.cf:before,
-.cf:after { content: " "; /* 1 */ display: table; /* 2 */ }
-.cf:after {clear: both; }
-/* For IE 6/7 only */
-.cf { *zoom: 1; }
+// Fancy buttons on home page
+#home-page-buttons {
+  width: 100%; .clearfix();
+  ul {
+    margin: 0 auto; width: 645px; display: block;
+    li {
+      list-style: none; display: block;
+      a{
+        display: block; float: left; border: 2px solid @tailormade-blue;
+        .border_radius(6px); width: 150px; padding: 10px; margin-right: 15px;
+        text-align: center; color: @tailormade-blue;
+        &:hover { color: @tailormade-red; }
+      }
+      &:last-child a { margin-right: 0; }
+    }
+  }
+}
 
 
 /*-------------------------------------------------------*

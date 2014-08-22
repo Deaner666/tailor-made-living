@@ -189,7 +189,7 @@ Masthead
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   z-index: 10;
-  height: 70px;
+  height: 60px;
 }
 #header #navigation ul {
   width: 100%;
@@ -200,7 +200,7 @@ Masthead
 #header #navigation ul li {
   width: 16%;
   background: none;
-  height: 70px;
+  height: 60px;
   padding: 0 2% 0 2%;
 }
 #header #navigation ul li:hover {
@@ -214,15 +214,13 @@ Masthead
   width: 100%;
   background: none;
   margin: 0;
-  padding: 13px 0 0 0;
+  padding: 16px 0 0 0;
   border: 0;
   text-align: center;
   color: #fff;
-  font-weight: bold;
-  height: 57px;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
-  text-transform: uppercase;
+  height: 47px;
+  font-family: "Satisfy", serif;
+  font-size: 18px;
 }
 #header #navigation ul.nav > li a:hover {
   background: none;
@@ -279,13 +277,13 @@ Content
   width: 96%;
   -webkit-border-top-left-radius: 8px;
   -webkit-border-top-right-radius: 8px;
-  -moz-border-radius-topleft: 8px;
-  -moz-border-radius-topright: 8px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  -webkit-box-shadow: 0px 0px 20px rgba(50, 50, 50, 0.2);
-  -moz-box-shadow: 0px 0px 20px rgba(50, 50, 50, 0.2);
-  box-shadow: 0px 0px 20px rgba(50, 50, 50, 0.2);
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.2);
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.2);
 }
 /*-------------------------------------------------------*
 Sidebar (inc. Layered Nav)
@@ -315,71 +313,65 @@ Incidentals
 body.home #breadcrumbs {
   display: none;
 }
-.wooslider {
-  border: none;
-  -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  -moz-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  -o-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+h1#home-page-header {
+  font-family: "Satisfy", serif;
+  color: #e60600;
+  text-transform: none;
+  text-align: center;
+  font-size: 3.5em;
+  margin: .5em 0 1em 0;
 }
-/* Clearfix for Wooslider */
-.wooslider:before,
-.wooslider:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.wooslider:after {
-  clear: both;
-}
-/* For IE 6/7 only */
-.wooslider {
-  *zoom: 1;
-}
-.browse-maps-button {
-  opacity: 0.5;
-  border: none !important;
-}
-.browse-maps-button:hover {
-  opacity: 1;
+h2#page-bottom-header {
+  font-family: "Satisfy", serif;
+  color: #e60600;
+  text-transform: none;
+  text-align: center;
+  font-size: 3.4em;
+  margin: .5em 0 1em 0;
 }
 .indented {
   margin-left: 3em;
 }
 /* Generic feature blocks */
-.mid-grey {
-  background: #eaedf0;
-}
-.light-grey {
-  background: #f5f8fa;
-}
 .full-width-feature {
   margin-right: -2%;
   margin-left: -2%;
-  padding: 4% 2% 0 2%;
+  padding: 0;
+  clear: both;
+}
+.full-width-feature:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
   clear: both;
 }
 .full-width-feature h1 {
-  color: #e60600;
+  color: #fff;
 }
 .full-width-feature h2 {
   font-size: 1.4em;
+  color: #fff;
+  line-height: 1.7;
 }
 .full-width-feature .blurb {
   width: 24%;
   text-align: center;
 }
+.full-width-feature .blurb p {
+  color: #fff;
+}
 .full-width-feature .blurb ul {
   text-align: left;
   margin-left: 2.2em;
-  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
   font-size: 1.15em;
 }
 .full-width-feature img {
   width: 74%;
   height: auto;
-  margin-bottom: 0;
+  margin: 0;
   padding: 0;
   border: none;
 }
@@ -389,66 +381,122 @@ body.home #breadcrumbs {
 .full-width-feature .pull-right {
   float: right;
 }
+.dark {
+  background: #212d58;
+}
+.light {
+  background: #eff5fa;
+}
+.light h1 {
+  color: #212d58;
+}
+.light h2 {
+  font-size: 1.4em;
+  color: #212d58;
+  line-height: 1.7;
+}
+.light .blurb {
+  width: 24%;
+  text-align: center;
+}
+.light .blurb p {
+  color: #212d58;
+}
+.light .blurb ul {
+  text-align: left;
+  margin-left: 2.2em;
+  color: #212d58;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.15em;
+}
 /* Specific feature block overrides */
-#choose-your-perfect-print {
-  padding-top: 8%;
-}
-#choose-your-perfect-print .blurb {
-  margin-top: 3%;
-}
-#pick-your-product {
-  padding: 0 5% 0 0;
-  margin-bottom: 3.236em;
-}
-#pick-your-product img {
-  width: 64%;
-}
-#pick-your-product .blurb {
-  width: 34%;
-  margin-top: 10%;
-}
-#add-the-finest-frame {
+#picture-perfect {
   padding-top: 0;
-  padding-left: 0;
 }
-#add-the-finest-frame img {
+#picture-perfect .blurb {
+  padding: 7% 0 0 5%;
+  width: 35%;
+}
+#picture-perfect img {
+  margin: 0 0 0 -5%;
+}
+#easy-peasy-editing {
+  padding: 0 5% 0 0;
+}
+#easy-peasy-editing img {
   width: 64%;
 }
-#add-the-finest-frame .blurb {
-  width: 34%;
-  margin-top: 10%;
-  margin-right: 2%;
+#easy-peasy-editing .blurb {
+  width: 32%;
+  margin: 10% 3% 0 -5%;
 }
-#add-the-finest-frame .blurb ul {
-  margin-left: 3.65em;
+#closing-statement {
+  padding-top: 5%;
 }
-#we-sweat-the-details {
-  margin-bottom: 3.236em;
-  padding-right: 0;
+#make-a-statement {
+  width: 50%;
+  float: left;
 }
-#we-sweat-the-details img {
-  width: 68%;
+#make-a-statement img {
+  width: 90%;
+  margin: 5% 5% 5% 5%;
 }
-#we-sweat-the-details .blurb {
-  margin-top: 6%;
-  width: 30%;
+#make-a-statement .blurb {
+  width: 80%;
+  margin: 0 10% 10% 10%;
 }
-/*-------------------------------------------------------*
-Clearfix
-*-------------------------------------------------------*/
-.cf:before,
-.cf:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
+#tailor-made-emphasis {
+  width: 50%;
+  clear: none;
+  float: right;
 }
-.cf:after {
+#tailor-made-emphasis img {
+  width: 57%;
+  margin: 5% 21.5% 5% 21.5%;
+}
+#tailor-made-emphasis .blurb {
+  width: 80%;
+  margin: 0 10% 10% 10%;
+}
+#home-page-buttons {
+  width: 100%;
+}
+#home-page-buttons:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
   clear: both;
 }
-/* For IE 6/7 only */
-.cf {
-  *zoom: 1;
+#home-page-buttons ul {
+  margin: 0 auto;
+  width: 645px;
+  display: block;
+}
+#home-page-buttons ul li {
+  list-style: none;
+  display: block;
+}
+#home-page-buttons ul li a {
+  display: block;
+  float: left;
+  border: 2px solid #212d58;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  width: 150px;
+  padding: 10px;
+  margin-right: 15px;
+  text-align: center;
+  color: #212d58;
+}
+#home-page-buttons ul li a:hover {
+  color: #e60600;
+}
+#home-page-buttons ul li:last-child a {
+  margin-right: 0;
 }
 /*-------------------------------------------------------*
 Footer

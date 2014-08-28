@@ -95,6 +95,12 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
                     </ul>
                 </div>
 
+                <section id="home-page-description-text">
+                    <h1>Tailor Made Living</h1>
+                    <p>Make a statement with a tailor-made custom printed product for your home. Upload your own image and make it awesome with our easy-to-use photo editor. We turn it into a made-to-measure and easy to install wallpaper, mounted print, personalised poster or printed canvas.</p>
+                    <p><strong>Easy peasy from mouse to house.</strong></p>
+                </section>
+
             <?php }
 
             	if ( have_posts() ) { $count = 0;

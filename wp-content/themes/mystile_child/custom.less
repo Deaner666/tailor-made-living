@@ -23,9 +23,8 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2, h3 { text-transform: uppercase; }
 
 p {
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  hyphens: none;
+  color: #000;
+  -webkit-hyphens: none; -moz-hyphens: none; hyphens: none;
 }
 
 /* List margin overrides */
@@ -304,12 +303,18 @@ h2#page-bottom-header {
       a {
         display: block; float: left; border: 2px solid @tailormade-blue;
         .border_radius(6px); width: 150px; padding: 10px; margin-right: 15px;
-        text-align: center; color: @tailormade-blue;
+        text-align: center; color: @tailormade-blue; margin-bottom: 60px;
         &:hover { color: @tailormade-red; }
       }
       &:last-child a { margin-right: 0; }
     }
   }
+}
+
+#home-page-description-text {
+  border: 2px solid @tailormade-blue; padding: 40px;
+  .border_radius(8px);
+  p { color: @tailormade-blue; }
 }
 
 

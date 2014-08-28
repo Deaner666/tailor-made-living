@@ -23,6 +23,7 @@ h3 {
   text-transform: uppercase;
 }
 p {
+  color: #000;
   -webkit-hyphens: none;
   -moz-hyphens: none;
   hyphens: none;
@@ -538,12 +539,25 @@ h2#page-bottom-header {
   margin-right: 15px;
   text-align: center;
   color: #212d58;
+  margin-bottom: 60px;
 }
 #home-page-buttons ul li a:hover {
   color: #e60600;
 }
 #home-page-buttons ul li:last-child a {
   margin-right: 0;
+}
+#home-page-description-text {
+  border: 2px solid #212d58;
+  padding: 40px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+#home-page-description-text p {
+  color: #212d58;
 }
 /*-------------------------------------------------------*
 Footer

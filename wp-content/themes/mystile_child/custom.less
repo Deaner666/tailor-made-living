@@ -9,6 +9,7 @@
 /* Fonts */
 @raleway: "Raleway", sans-serif;
 @satisfy: "Satisfy", serif;
+@icons: "dashicons";
 
 body {
   margin: 0 auto !important; max-width: 75.998em;
@@ -223,6 +224,21 @@ h2#page-bottom-header {
 
 .indented { margin-left: 3em; }
 .centre { text-align: center; }
+
+.fancy-button {
+  display: block; float: left; background: @tailormade-blue;
+  .border_radius(6px); padding: 10px;
+  text-align: center; color: #fff; margin: 1.618em 15px 1.618em 0;
+  border: 2px solid @tailormade-blue; width: auto;
+  &:hover {
+    color: @tailormade-blue; background: #fff;
+    border: 2px solid @tailormade-blue;
+  }
+}
+// Icons
+.upload-icon:before { font-family: @icons; content: "\f317"; }
+.edit-image-icon:before { font-family: @icons; content: "\f128"; }
+#image-upload-lead-in { margin-right: 20px; }
 
 /* Generic feature blocks */
 .full-width-feature {

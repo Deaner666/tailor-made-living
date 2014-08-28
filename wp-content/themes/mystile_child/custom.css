@@ -347,6 +347,38 @@ h2#page-bottom-header {
 .centre {
   text-align: center;
 }
+.fancy-button {
+  display: block;
+  float: left;
+  background: #212d58;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  margin: 1.618em 15px 1.618em 0;
+  border: 2px solid #212d58;
+  width: auto;
+}
+.fancy-button:hover {
+  color: #212d58;
+  background: #fff;
+  border: 2px solid #212d58;
+}
+.upload-icon:before {
+  font-family: "dashicons";
+  content: "\f317";
+}
+.edit-image-icon:before {
+  font-family: "dashicons";
+  content: "\f128";
+}
+#image-upload-lead-in {
+  margin-right: 20px;
+}
 /* Generic feature blocks */
 .full-width-feature {
   margin-right: -2%;

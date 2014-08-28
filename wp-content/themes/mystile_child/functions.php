@@ -1,5 +1,10 @@
 <?php
 
+	add_action( 'wp_enqueue_scripts', 'mtd_load_dashicons' );
+	function mtd_load_dashicons() {
+	    wp_enqueue_style( 'dashicons' );
+	}
+
 	add_shortcode( 'best_selling_products_by_cat', 'best_selling_products_by_cat' );
 
 	/**

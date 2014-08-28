@@ -10,7 +10,9 @@
 <section id="mtd-image-uploader">
 	
 	<div id="image-upload-lead-in">
-		<a href="javascript:;" class="modal-opener">Upload your image here</a>
+		<a href="javascript:;" class="modal-opener fancy-button upload-icon">
+			Upload Your Image
+		</a>
 	</div>
 
 	<article id="image-upload-modal">
@@ -61,7 +63,9 @@
 	<div id='injection_site'></div>
 
 	<div id="aviary-edit-button">
-		<a href="javascript:;" onclick="return launchEditor('aviary-image', jQuery('.wp-post-image').attr('src'));">Edit Photo</a>
+		<a class="fancy-button edit-image-icon" href="javascript:;" onclick="return launchEditor('aviary-image', jQuery('.wp-post-image').attr('src'));">
+			Edit Your Image
+		</a>
 	</div>
 
 </section>

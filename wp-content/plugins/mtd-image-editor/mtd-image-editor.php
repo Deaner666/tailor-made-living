@@ -36,11 +36,11 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
     // 
     //////////////////////////////////////////////////
 
-    function wpf_activation() {
+    function mtd_activation() {
         // Activation code here
     }
     
-    register_activation_hook(__FILE__, 'wpf_activation');
+    register_activation_hook(__FILE__, 'mtd_activation');
 
     //////////////////////////////////////////////////
     // 
@@ -48,9 +48,9 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
     // 
     //////////////////////////////////////////////////
 
-    add_action('wp_enqueue_scripts', 'wpf_enqueue_scripts');
+    add_action('wp_enqueue_scripts', 'mtd_enqueue_scripts');
 
-    function wpf_enqueue_scripts() {
+    function mtd_enqueue_scripts() {
         wp_enqueue_script( 'jquery-ui-core' );
         wp_enqueue_script( 'jquery-ui-widget' );
         wp_enqueue_script( 'jquery-ui-dialog' );
@@ -85,11 +85,11 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
     // 
     //////////////////////////////////////////////////
 
-    function wpf_deactivation() {
+    function mtd_deactivation() {
         // Deactivation code here
     }
     
-    register_deactivation_hook(__FILE__, 'wpf_deactivation');
+    register_deactivation_hook(__FILE__, 'mtd_deactivation');
 
 
 } // end WooCommerce detection

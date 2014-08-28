@@ -335,6 +335,9 @@ h2#page-bottom-header {
 .indented {
   margin-left: 3em;
 }
+.centre {
+  text-align: center;
+}
 /* Generic feature blocks */
 .full-width-feature {
   margin-right: -2%;
@@ -506,25 +509,28 @@ Footer
 *-------------------------------------------------------*/
 .footer-wrap {
   margin: 0;
-  background: #eaedf0 url('images/layout/footer_crenellations.png') top left repeat-x;
-  background-size: 20px 7px;
-  -webkit-box-shadow: 0px 20px 20px rgba(50, 50, 50, 0.2);
-  -moz-box-shadow: 0px 20px 20px rgba(50, 50, 50, 0.2);
-  box-shadow: 0px 20px 20px rgba(50, 50, 50, 0.2);
+  background: #212d58;
+  box-shadow: 0px 20px 20px 0px rgba(50, 50, 50, 0.2);
+  -webkit-box-shadow: 0px 20px 20px 0px rgba(50, 50, 50, 0.2);
 }
 .footer-wrap h3 {
   text-transform: uppercase;
   border: none;
   padding: 0;
+  color: #fff;
 }
 .footer-wrap p {
   font-size: 90%;
+  color: #fff;
 }
-.footer-wrap li a {
-  font-size: 90%;
+.footer-wrap a {
   font-weight: normal;
   text-decoration: underline;
-  color: #e60600;
+  color: #ffe400;
+}
+.footer-wrap li {
+  color: #fff;
+  font-size: 90%;
 }
 .footer-wrap li a:hover {
   text-decoration: none;
@@ -532,11 +538,14 @@ Footer
 .footer-wrap ul.menu li:before {
   content: none;
 }
+.footer-wrap img.footer-logo {
+  margin-bottom: 30px;
+}
+.footer-wrap img.footer-card-icons {
+  margin-top: 40px;
+}
 #footer-widgets {
   padding: 3.631em 0 0 0;
-}
-#text-5 p {
-  text-align: center;
 }
 #footer {
   display: none;

@@ -20,9 +20,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: @raleway; color: @tailormade-blue; font-weight: normal;
 }
 h1, h2, h3 { text-transform: uppercase; }
-/*h2 { color: #1e9ead; }*/
 
-/*p, ul { font-size: 1.15em; }*/
+p {
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
+}
 
 #wrapper { background: none; }
 
@@ -277,7 +280,7 @@ h2#page-bottom-header {
     margin: 0 auto; width: 800px; display: block;
     li {
       list-style: none; display: block;
-      a{
+      a {
         display: block; float: left; border: 2px solid @tailormade-blue;
         .border_radius(6px); width: 150px; padding: 10px; margin-right: 15px;
         text-align: center; color: @tailormade-blue;

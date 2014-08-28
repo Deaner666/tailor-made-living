@@ -22,8 +22,11 @@ h2,
 h3 {
   text-transform: uppercase;
 }
-/*h2 { color: #1e9ead; }*/
-/*p, ul { font-size: 1.15em; }*/
+p {
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
+}
 #wrapper {
   background: none;
 }

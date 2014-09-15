@@ -53,8 +53,8 @@
 	    	featherEditor.launch({
 	    		image: id,
 	        	url: src,
-	        	forceCropPreset: ['Wall Dimensions', '300x200'],
-				forceCropMessage: 'Crop your image to the size of your wall'
+	        	// forceCropPreset: ['Wall Dimensions', '300x200'],
+				// forceCropMessage: 'Crop your image to the size of your wall'
 	    	});
 	    	return false;
 		}

@@ -16,7 +16,7 @@ if(isset($_FILES['form-image']) && ($_FILES['form-image']['size'] > 0)) {
   $arr_file_type = wp_check_filetype(basename($_FILES['form-image']['name']));
   $uploaded_file_type = $arr_file_type['type'];
   // Set the max size of a file upload
-  $max_size = 16 * 1024000000;
+  $max_size = 16384 * 1024;
               
   // If the uploaded file is the right format
   if(in_array($uploaded_file_type, $allowed_file_types)) {

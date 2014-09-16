@@ -69,7 +69,8 @@ jQuery(document).ready( function() {
                                   success: function() {
                                     // Update WooCommerce product image
                                     jQuery(".wp-post-image").attr('src', jQuery(".preview").attr('src'));
-                                    jQuery(".wp-post-image").attr('id', 'aviary-image');
+                                    // Add Aviary ID to the modal preview so we know which image to update
+                                    jQuery("#image-upload-preview img").attr('id', 'aviary-image');
                                     // Hidden field in the Gravity Form
                                     jQuery("input[value='image_url']").attr('value', jQuery(".preview").attr('src'));
                                     // Show the Aviary edit button and the width / height inputs

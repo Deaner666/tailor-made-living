@@ -44,11 +44,11 @@
 				<h3>Your Wall Dimensions</h3>
 				<div class="wall-width">
 					<label for="modal-width">Width (cm)</label>
-					<input id="modal-width" class="sync-width-modal" type="number" step="any" tabindex="1" />
+					<input id="modal-width" class="sync-width-modal" type="number" step="any" />
 				</div>
 				<div class="wall-height">
 					<label for="modal-height">Height (cm)</label>
-					<input id="modal-height" class="sync-height-modal" type="number" step="any" tabindex="2" />
+					<input id="modal-height" class="sync-height-modal" type="number" step="any" />
 				</div>
 			</div>
 

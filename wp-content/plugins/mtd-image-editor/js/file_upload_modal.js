@@ -9,14 +9,33 @@ jQuery(document).ready( function() {
   });
   jQuery(".sync-width-modal").keyup(function(){
     jQuery(".sync-width input").val(jQuery(".sync-width-modal").val());
+    doCrop();
   });
   jQuery(".sync-height-modal").keyup(function(){
     jQuery(".sync-height input").val(jQuery(".sync-height-modal").val());
+    doCrop();
   });
 
   // Set width and height for jQuery dialog based on current window size
   var dialogWidth = jQuery( window ).width() * 0.8;
   var dialogHeight = jQuery( window ).height() * 0.85;
+
+  // Function to update the crop preview
+  function doCrop() {
+    var currentWidth = dialogWidth * .48;
+    if ( jQuery('.sync-height-modal').val() && jQuery('.sync-width-modal').val() ) {
+      var ratioWidthToHeight = jQuery('.sync-height-modal').val() / jQuery('.sync-width-modal').val();
+      var currentHeight = currentWidth * ratioWidthToHeight;
+    } else {
+      var currentHeight = 250;
+    }
+    jQuery( '#image-upload-preview img' ).cropbox({
+      width: currentWidth,
+      height: currentHeight
+    }).on('cropbox', function(e, data) {
+      console.log('crop window: ' + data);
+    });
+  }
 
   // jQuery dialog settings for image upload modal
   jQuery( "#image-upload-modal" ).dialog({
@@ -30,7 +49,10 @@ jQuery(document).ready( function() {
     show: 175,
     hide: 175,
     buttons: [
-      { text: "OK", click: function() { jQuery( this ).dialog( "close" ); } }
+      { text: "Save", click: function() {
+        // TODO Save the cropped version of the image when dialog modal is submitted
+        jQuery( this ).dialog( "close" );
+      } }
     ]
   });
 
@@ -54,21 +76,7 @@ jQuery(document).ready( function() {
                                     jQuery('#aviary-edit-button').show();
                                     jQuery('.image-dimensions-field').show();
                                     // Crop tools for the image
-                                    var currentWidth = dialogWidth * .48;
-                                    console.log('current width: ' + currentWidth);
-                                    if ( jQuery('.sync-height-modal').val() && jQuery('.sync-width-modal').val() ) {
-                                      var ratioWidthToHeight = jQuery('.sync-height-modal').val() / jQuery('.sync-width-modal').val();
-                                      var currentHeight = currentWidth * ratioWidthToHeight;
-                                      console.log('normal if height: ' + currentHeight);
-                                    } else {
-                                      var currentHeight = 250;
-                                    }
-                                    jQuery( '#image-upload-preview img' ).cropbox({
-                                      width: currentWidth,
-                                      height: currentHeight
-                                    }).on('cropbox', function(e, data) {
-                                      console.log('crop window: ' + data);
-                                    });
+                                    doCrop();
                                   }
                                 }).submit();
   });

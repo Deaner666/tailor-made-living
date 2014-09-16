@@ -35,7 +35,7 @@
 			<div id="aviary-edit-button">
 				<h3>Make Your Image Awesome</h3>
 				<p>Apply special effects to your image, add text and more.</p>
-				<a class="fancy-button edit-image-icon" href="javascript:;" onclick="return launchEditor('aviary-image', jQuery('.wp-post-image').attr('src'));">
+				<a class="fancy-button edit-image-icon" href="javascript:;" onclick="return launchEditor('aviary-image', jQuery('#image-upload-preview img').attr('src'));">
 					Edit Image
 				</a>
 			</div>

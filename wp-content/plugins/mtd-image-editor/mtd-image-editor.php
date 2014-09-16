@@ -58,10 +58,13 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
         wp_enqueue_script( 'image_editor', plugins_url('/js/image_editor.js', __FILE__ ), array( 'jquery' ) );
         wp_enqueue_script( 'aviary_editor', 'http://feather.aviary.com/js/feather.js' );
         wp_register_script( 'file_upload_modal', plugins_url('/js/file_upload_modal.js', __FILE__ ), array( 'jquery-ui-widget' ) );
+        wp_register_script( 'jquery-cropbox', plugins_url('/js/jquery.cropbox.js', __FILE__ ), array( 'jquery' ) );
         // Pass site_url info to file_upload_modal JS file
         wp_localize_script( 'file_upload_modal', 'mtd_site_url', get_site_url() );
         wp_enqueue_script( 'file_upload_modal' );
+        wp_enqueue_script( 'jquery-cropbox' );
         wp_enqueue_style( 'file_upload_modal', plugins_url('/css/file_upload_modal.css', __FILE__ ) );
+        wp_enqueue_style( 'jquery-cropbox', plugins_url('/css/jquery.cropbox.css', __FILE__ ) );
         wp_enqueue_style( 'jquery-ui', plugins_url('/css/jquery-ui.css', __FILE__ ) );
     }
 

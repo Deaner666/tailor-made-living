@@ -1,9 +1,18 @@
 .ui-dialog-titlebar { display: none; }
 
-#image-upload-form { width: 48%; float: left; }
+#image-edit-forms { width: 48%; float: left; }
+#image-upload-form {  }
 #image-upload-form ul.form-fields li { list-style-type: none; }
 #image-upload-form input { margin-bottom: 1.2em; }
 #image-upload-form label { font-size: .8em; }
 #image-upload-preview { width: 48%; float: right; }
 
 #aviary-edit-button { display: none; }
+#aviary-edit-button a { color: #fff; margin-top: 0; }
+#aviary-edit-button a:hover { color: #212d58; }
+.image-dimensions-field { display: none; clear: both; }
+.image-dimensions-field input { clear: both; }
+.image-dimensions-field label { display: block; }
+.wall-width, .wall-height { margin-bottom: 1.2em; width: 48%; }
+.wall-width { float: left; }
+.wall-height { float: right; }

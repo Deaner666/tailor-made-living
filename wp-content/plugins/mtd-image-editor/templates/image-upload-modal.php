@@ -20,15 +20,39 @@
 			<h1>Upload your image</h1>
 		</header>
 
-		<form id="image-upload-form" name="image-upload-form" method="post" action="<?php echo $form_action ?>" enctype="multipart/form-data">
-			<ul class="form-fields">
-				<li>
-					<div class="form-label"><label for="form-image">Choose an image to upload</label></div>
-					<div class="form-input"><input id="form-image" name="form-image" type="file"/></div>
-				</li>
-				<li><input id="form-submit" name="form-submit" type="submit" value="Upload"/></li>
-			</ul>
-		</form>
+		<div id="image-edit-forms">
+
+			<form id="image-upload-form" name="image-upload-form" method="post" action="<?php echo $form_action ?>" enctype="multipart/form-data">
+				<ul class="form-fields">
+					<li>
+						<div class="form-label"><label for="form-image">Choose an image to upload</label></div>
+						<div class="form-input"><input id="form-image" name="form-image" type="file"/></div>
+					</li>
+					<li><input id="form-submit" name="form-submit" type="submit" value="Upload"/></li>
+				</ul>
+			</form>
+
+			<div id="aviary-edit-button">
+				<h3>Make Your Image Awesome</h3>
+				<p>Apply special effects to your image, add text and more.</p>
+				<a class="fancy-button edit-image-icon" href="javascript:;" onclick="return launchEditor('aviary-image', jQuery('.wp-post-image').attr('src'));">
+					Edit Image
+				</a>
+			</div>
+
+			<div class="image-dimensions-field">
+				<h3>Your Wall Dimensions</h3>
+				<div class="wall-width">
+					<label for="modal-width">Width (cm)</label>
+					<input id="modal-width" class="sync-width-modal" type="number" step="any" tabindex="1" />
+				</div>
+				<div class="wall-height">
+					<label for="modal-height">Height (cm)</label>
+					<input id="modal-height" class="sync-height-modal" type="number" step="any" tabindex="2" />
+				</div>
+			</div>
+
+		</div>
 
 		<div id="image-upload-preview"></div>
 	</article>
@@ -61,12 +85,6 @@
 	</script>
 
 	<div id='injection_site'></div>
-
-	<div id="aviary-edit-button">
-		<a class="fancy-button edit-image-icon" href="javascript:;" onclick="return launchEditor('aviary-image', jQuery('.wp-post-image').attr('src'));">
-			Edit Your Image
-		</a>
-	</div>
 
 </section>
 

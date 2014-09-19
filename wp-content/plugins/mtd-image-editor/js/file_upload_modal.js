@@ -52,6 +52,8 @@ jQuery(document).ready( function() {
     buttons: [
       { text: "Save", click: function() {
         // TODO Save the cropped version of the image when dialog modal is submitted
+        var crop = jQuery('#image-upload-preview img').data('cropbox');
+        console.log('This is on the save command: ' + crop.result);
         jQuery( this ).dialog( "close" );
       } }
     ]

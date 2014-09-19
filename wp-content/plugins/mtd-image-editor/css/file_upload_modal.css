@@ -5,7 +5,7 @@
 #image-upload-form ul.form-fields li { list-style-type: none; }
 #image-upload-form input { margin-bottom: 1.2em; }
 #image-upload-form label { font-size: .8em; }
-#image-upload-preview { width: 48%; float: right; }
+#image-upload-preview { width: 48%; float: right; margin-right: 20px; }
 
 #aviary-edit-button { display: none; }
 #aviary-edit-button a { color: #fff; margin-top: 0; }

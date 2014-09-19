@@ -31,7 +31,8 @@ jQuery(document).ready( function() {
     }
     jQuery( '#image-upload-preview img' ).cropbox({
       width: currentWidth,
-      height: currentHeight
+      height: currentHeight,
+      showControls: 'always'
     }).on('cropbox', function(e, data) {
       console.log('crop window: ' + data);
     });
@@ -63,7 +64,7 @@ jQuery(document).ready( function() {
   // AJAX form submission for upload of image, posts to mtd-upload.php for processing
   jQuery('#form-submit').click(function() {
     jQuery("#image-upload-preview").html('');
-    jQuery("#image-upload-preview").html('<img src="' + mtd_site_url + '/wp-content/plugins/mtd-image-editor/images/loading.gif" />');
+    jQuery("#image-upload-preview").html('<img src="' + mtd_site_url + '/wp-content/plugins/mtd-image-editor/images/loadingAnimation.gif" /> <p style="margin-top:20px;">Thanks for uploading your image. We need a large file to ensure a high quality finish but it means it may take a while for your image to upload. Why not put the kettle on whilst you\'re waiting?</p><p>As your file uploads we are creating a fast, low resolution version of the image for editing.</p>');
     jQuery("#image-upload-form").ajaxForm({
                                   target: '#image-upload-preview',
                                   success: function() {

@@ -64,9 +64,12 @@ jQuery(document).ready( function() {
   // AJAX form submission for upload of image, posts to mtd-upload.php for processing
   jQuery('#form-submit').click(function() {
     jQuery("#image-upload-preview").html('');
-    jQuery("#image-upload-preview").html('<img src="' + mtd_site_url + '/wp-content/plugins/mtd-image-editor/images/loadingAnimation.gif" /> <p style="margin-top:20px;">Thanks for uploading your image. We need a large file to ensure a high quality finish but it means it may take a while for your image to upload. Why not put the kettle on whilst you\'re waiting?</p><p>As your file uploads we are creating a fast, low resolution version of the image for editing.</p>');
+    jQuery("#image-upload-preview").html('<img src="' + mtd_site_url + '/wp-content/plugins/mtd-image-editor/images/loadingAnimation.gif" /><p>Progress: <span class="completion">0</span>%</p><p style="margin-top:20px;">Thanks for uploading your image. We need a large file to ensure a high quality finish but it means it may take a while for your image to upload. Why not put the kettle on whilst you\'re waiting?</p><p>As your file uploads we are creating a fast, low resolution version of the image for editing.</p>');
     jQuery("#image-upload-form").ajaxForm({
                                   target: '#image-upload-preview',
+                                  uploadProgress: function(event, position, total, percentComplete) {
+                                    jQuery('.completion').html(percentComplete);
+                                  },
                                   success: function() {
                                     // Update WooCommerce product image
                                     jQuery(".wp-post-image").attr('src', jQuery(".preview").attr('src'));

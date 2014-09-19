@@ -68,6 +68,24 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
         wp_enqueue_style( 'jquery-ui', plugins_url('/css/jquery-ui.css', __FILE__ ) );
     }
 
+
+    //////////////////////////////////////////////////
+    // 
+    // Add 1,024 pixel wide attachment size for creating a proxy image
+    // to work with when customers upload files
+    // 
+    //////////////////////////////////////////////////
+
+    add_image_size( 'upload-proxy', 1024 ); // 1,024 pixels wide (and unlimited height)
+
+    // Let us access it in the Media Library admin
+    add_filter( 'image_size_names_choose', 'my_custom_sizes' );
+    function my_custom_sizes( $sizes ) {
+        return array_merge( $sizes, array(
+            'upload-proxy' => __( 'Upload Proxy' ),
+        ) );
+    }
+
     
 
     //////////////////////////////////////////////////

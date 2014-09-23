@@ -3,16 +3,20 @@ jQuery(document).ready( function() {
   // Keep width and heigh input fields in sync
   jQuery(".sync-width input").keyup(function(){
     jQuery(".sync-width-modal").val(jQuery(".sync-width input").val());
+    jQuery( ".sync-width-modal" ).trigger( "change" );
   });
   jQuery(".sync-height input").keyup(function(){
     jQuery(".sync-height-modal").val(jQuery(".sync-height input").val());
+    jQuery( ".sync-height-modal" ).trigger( "change" );
   });
   jQuery(".sync-width-modal").keyup(function(){
     jQuery(".sync-width input").val(jQuery(".sync-width-modal").val());
+    jQuery( ".sync-width input" ).trigger( "change" );
     doCrop();
   });
   jQuery(".sync-height-modal").keyup(function(){
     jQuery(".sync-height input").val(jQuery(".sync-height-modal").val());
+    jQuery( ".sync-height input" ).trigger( "change" );
     doCrop();
   });
 

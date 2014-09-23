@@ -16,27 +16,15 @@ jQuery(document).ready( function() {
     doCrop();
   });
 
+  // Monitor filename of uploaded image so we can pass it to doCropSave()
+  var uploadedFilename = "";
+  jQuery("#form-image").change(function(){
+    uploadedFilename = jQuery('#form-image').val();
+  });
+
   // Set width and height for jQuery dialog based on current window size
   var dialogWidth = jQuery( window ).width() * 0.8;
   var dialogHeight = jQuery( window ).height() * 0.85;
-
-  // Function to update the crop preview
-  function doCrop() {
-    var currentWidth = dialogWidth * .48;
-    if ( jQuery('.sync-height-modal').val() && jQuery('.sync-width-modal').val() ) {
-      var ratioWidthToHeight = jQuery('.sync-height-modal').val() / jQuery('.sync-width-modal').val();
-      var currentHeight = currentWidth * ratioWidthToHeight;
-    } else {
-      var currentHeight = 250;
-    }
-    jQuery( '#image-upload-preview img' ).cropbox({
-      width: currentWidth,
-      height: currentHeight,
-      showControls: 'always'
-    }).on('cropbox', function(e, data) {
-      console.log('crop window: ' + data);
-    });
-  }
 
   // jQuery dialog settings for image upload modal
   jQuery( "#image-upload-modal" ).dialog({
@@ -51,30 +39,9 @@ jQuery(document).ready( function() {
     hide: 175,
     buttons: [
       { text: "Save", click: function() {
-        // TODO Save the cropped version of the image when dialog modal is submitted
-        var crop = jQuery('#image-upload-preview img').data('cropbox');
-        console.log('This is on the save command: ' + crop.result);
-        // jQuery.post(mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-cropped-image-save.php', { img: crop.getBlob() } )
-        //   .done(function(data){
-        //     console.log('Returned data from crop save PHP page:' + data);
-        //   });
-
-        var data = new FormData();
-        var blob = crop.getBlob();
-        var filename = "cropped_image.png";
-        data.append('img', blob, filename);
-
-        jQuery.ajax({
-          type: 'POST',
-          contentType: false,
-          url: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-cropped-image-save.php',
-          cache: false,
-          processData: false,
-          data: data,
-          success: function(data){
-            console.log('Returned data from crop save PHP page:' + data);
-          }
-        });
+        if (jQuery('#image-upload-preview img').length != 0) {
+          doSaveCrop();
+        };
 
         // Close the dialog
         jQuery( this ).dialog( "close" );
@@ -112,5 +79,47 @@ jQuery(document).ready( function() {
                                   return false; // To avoid default form submit which results in two uploads
                                 });
   });
+
+  // Function to update the crop preview
+  function doCrop() {
+    var currentWidth = dialogWidth * .48;
+    if ( jQuery('.sync-height-modal').val() && jQuery('.sync-width-modal').val() ) {
+      var ratioWidthToHeight = jQuery('.sync-height-modal').val() / jQuery('.sync-width-modal').val();
+      var currentHeight = currentWidth * ratioWidthToHeight;
+    } else {
+      var currentHeight = 250;
+    }
+    jQuery( '#image-upload-preview img' ).cropbox({
+      width: currentWidth,
+      height: currentHeight,
+      showControls: 'always'
+    }).on('cropbox', function(e, data) {
+      console.log('crop window: ' + data);
+    });
+  }
+
+  // Function to send the cropped image to PHP script that saves it
+  // to the WordPress filesystem (posts to mtd-cropped-image-save.php)
+  function doSaveCrop() {
+    var crop = jQuery('#image-upload-preview img').data('cropbox');
+    var data = new FormData();
+    var blob = crop.getBlob();
+    var filename = uploadedFilename+"_cropped.png";
+    data.append('img', blob, filename);
+
+    jQuery.ajax({
+      type: 'POST',
+      contentType: false,
+      url: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-cropped-image-save.php',
+      cache: false,
+      processData: false,
+      data: data,
+      success: function(response){
+        console.log('Returned data from crop save PHP page:' + response);
+        // Hidden field in the Gravity Form
+        jQuery("input[value='cropped_image_url']").attr('value', response);
+      }
+    });
+  }
 
 });

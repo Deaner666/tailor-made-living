@@ -18,12 +18,9 @@ $img = $_FILES['img'];
 $upload_overrides = array( 'test_form' => false );
 $movefile = wp_handle_upload( $img, $upload_overrides );
 if ( $movefile ) {
-    echo "File is valid, and was successfully uploaded.\n";
-    var_dump( $movefile);
+    // echo "File is valid, and was successfully uploaded.\n";
+    // var_dump( $movefile);
+    echo $movefile['url'];
 } else {
     echo "Possible file upload attack!\n";
 }
-
-?>
-
-<img src="" alt="" />

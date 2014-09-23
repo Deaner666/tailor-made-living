@@ -54,10 +54,28 @@ jQuery(document).ready( function() {
         // TODO Save the cropped version of the image when dialog modal is submitted
         var crop = jQuery('#image-upload-preview img').data('cropbox');
         console.log('This is on the save command: ' + crop.result);
-        jQuery.post(mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-cropped-image-save.php', { img: crop.getDataURL() } )
-          .done(function(data){
+        // jQuery.post(mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-cropped-image-save.php', { img: crop.getBlob() } )
+        //   .done(function(data){
+        //     console.log('Returned data from crop save PHP page:' + data);
+        //   });
+
+        var data = new FormData();
+        var blob = crop.getBlob();
+        var filename = "cropped_image.png";
+        data.append('img', blob, filename);
+
+        jQuery.ajax({
+          type: 'POST',
+          contentType: false,
+          url: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-cropped-image-save.php',
+          cache: false,
+          processData: false,
+          data: data,
+          success: function(data){
             console.log('Returned data from crop save PHP page:' + data);
-          });
+          }
+        });
+
         // Close the dialog
         jQuery( this ).dialog( "close" );
       } }
@@ -90,7 +108,9 @@ jQuery(document).ready( function() {
                                     // Crop tools for the image
                                     doCrop();
                                   }
-                                }).submit();
+                                }).submit(function(){
+                                  return false; // To avoid default form submit which results in two uploads
+                                });
   });
 
 });

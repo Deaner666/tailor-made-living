@@ -4,6 +4,26 @@ require_once( dirname( dirname( dirname( dirname( __FILE__ )))) . '/wp-load.php'
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-echo "You made it. Awesome!";
+// These files need to be included as dependencies when on the front end.
+require_once( ABSPATH . 'wp-admin/includes/image.php' );
+require_once( ABSPATH . 'wp-admin/includes/file.php' );
+require_once( ABSPATH . 'wp-admin/includes/media.php' );
 
-echo $_POST['img'];
+// $encoded_img = $_POST['img'];
+// $encoded_img = str_replace(' ','+',$encoded_img);
+// $decoded_img = base64_decode($encoded_img);
+
+$img = $_FILES['img'];
+
+$upload_overrides = array( 'test_form' => false );
+$movefile = wp_handle_upload( $img, $upload_overrides );
+if ( $movefile ) {
+    echo "File is valid, and was successfully uploaded.\n";
+    var_dump( $movefile);
+} else {
+    echo "Possible file upload attack!\n";
+}
+
+?>
+
+<img src="" alt="" />

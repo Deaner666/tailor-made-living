@@ -76,9 +76,7 @@
 		function launchEditor(id, src) {
 	    	featherEditor.launch({
 	    		image: id,
-	        	url: src,
-	        	// forceCropPreset: ['Wall Dimensions', '300x200'],
-				// forceCropMessage: 'Crop your image to the size of your wall'
+	        	url: src
 	    	});
 	    	return false;
 		}

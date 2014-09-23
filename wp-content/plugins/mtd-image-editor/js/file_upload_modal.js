@@ -68,6 +68,8 @@ jQuery(document).ready( function() {
                                     // Add Aviary ID to the modal preview so we know which image to update
                                     jQuery("#image-upload-preview img").attr('id', 'aviary-image');
                                     // Hidden field in the Gravity Form
+                                    // TODO: This is currently pointing to the proxy image - make it point to the
+                                    // original upload or the original after editing in Aviary
                                     jQuery("input[value='image_url']").attr('value', jQuery(".preview").attr('src'));
                                     // Show the Aviary edit button and the width / height inputs
                                     jQuery('#aviary-edit-button').show();
@@ -118,6 +120,8 @@ jQuery(document).ready( function() {
         console.log('Returned data from crop save PHP page:' + response);
         // Hidden field in the Gravity Form
         jQuery("input[value='cropped_image_url']").attr('value', response);
+        // Update WooCommerce product image
+        jQuery(".wp-post-image").attr('src', response);
       }
     });
   }

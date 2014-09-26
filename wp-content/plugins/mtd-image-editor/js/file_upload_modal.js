@@ -75,7 +75,10 @@ jQuery(document).ready( function() {
                                     // TODO: This is currently pointing to the proxy image - make it point to the
                                     // original upload or the original after editing in Aviary
                                     jQuery("input[value='image_url']").attr('value', jQuery(".preview").attr('src'));
-                                    // Show the Aviary edit button and the width / height inputs
+                                    // Hide the upload form
+                                    jQuery('#image-upload-form').hide();
+                                    // Show the image uploaded div, Aviary edit button and the width / height inputs
+                                    jQuery('#image-uploaded').show();
                                     jQuery('#aviary-edit-button').show();
                                     jQuery('.image-dimensions-field').show();
                                     // Crop tools for the image

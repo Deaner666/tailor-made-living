@@ -2,6 +2,7 @@
 
 #image-edit-forms { width: 48%; float: left; }
 #image-upload-form {  }
+#image-uploaded { display: none; }
 #image-upload-form ul.form-fields li { list-style-type: none; }
 #image-upload-form input { margin-bottom: 1.2em; }
 #image-upload-form label { font-size: .8em; }

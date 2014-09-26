@@ -32,6 +32,10 @@
 				</ul>
 			</form>
 
+			<div id="image-uploaded">
+				<div class="woocommerce-message">Image uploaded. You're doing great!</div>
+			</div>
+
 			<div id="aviary-edit-button">
 				<h3>Make Your Image Awesome</h3>
 				<p>Apply special effects to your image, add text and more.</p>

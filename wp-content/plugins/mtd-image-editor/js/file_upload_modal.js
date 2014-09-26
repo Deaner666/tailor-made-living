@@ -43,12 +43,19 @@ jQuery(document).ready( function() {
     hide: 175,
     buttons: [
       { text: "Save", click: function() {
-        if (jQuery('#image-upload-preview img').length != 0) {
-          doSaveCrop();
-        };
+        // Check to make sure dimensions have been entered
+        if ( jQuery('#modal-width').val() && jQuery('#modal-height').val() ) {
 
-        // Close the dialog
-        jQuery( this ).dialog( "close" );
+          if (jQuery('#image-upload-preview img').length != 0) {
+            doSaveCrop();
+          };
+
+          // Close the dialog
+          jQuery( this ).dialog( "close" );
+        } else {
+          alert("Please enter your dimensions!");
+          return false;
+        }
       } }
     ]
   });

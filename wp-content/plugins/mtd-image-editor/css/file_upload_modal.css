@@ -1,3 +1,5 @@
+#image-upload-modal { display: none; }
+
 .ui-dialog-titlebar { display: none; }
 
 #image-edit-forms { width: 48%; float: left; }

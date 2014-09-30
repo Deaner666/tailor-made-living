@@ -2,7 +2,7 @@
 // Let us access WordPress functions as we're outside the normal load path (this isn't ideal)
 require_once( dirname( dirname( dirname( dirname( __FILE__ )))) . '/wp-load.php' );
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+// if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // These files need to be included as dependencies when on the front end.
 require_once( ABSPATH . 'wp-admin/includes/image.php' );

@@ -69,17 +69,14 @@
 	    	theme: 'light', // Check out our new 'light' and 'dark' themes!
 	    	tools: 'all',
 	    	appendTo: 'injection_site',
-	    	onSaveButtonClicked: function() {
+	    	// onSaveButtonClicked: function() {},
+	    	onSave: function(imageID, newURL) {
 	    		featherEditor.saveHiRes();
 	    		console.log('.saveHiRes() method sent');
 	    		console.log(mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php');
-	    		featherEditor.save();
-	    	},
-	    	onSave: function(imageID, newURL) {
 	    		var img = document.getElementById(imageID);
 	        	img.src = newURL;
 	        	console.log('Called from onSave function');
-	        	featherEditor.close();
 	    	},
 	    	postUrl: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
 	    	// onSaveHiRes: function(imgID, newURL) {},

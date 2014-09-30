@@ -75,7 +75,7 @@
 	    	},
 	    	onSaveButtonClicked: function() {
 	    		editor.saveHiRes();
-	            return false;
+	            // return false;
 	    	},
 	    	onError: function(errorObj) {
 	        	alert(errorObj.message);

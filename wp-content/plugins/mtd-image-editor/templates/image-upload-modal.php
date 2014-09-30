@@ -68,7 +68,7 @@
 	    	apiVersion: 3,
 	    	theme: 'light', // Check out our new 'light' and 'dark' themes!
 	    	tools: 'all',
-	    	appendTo: 'injection_site',
+	    	appendTo: '',
 	    	// onSaveButtonClicked: function() {},
 	    	onSave: function(imageID, newURL) {
 	    		featherEditor.saveHiRes();

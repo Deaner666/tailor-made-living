@@ -68,15 +68,16 @@
 	    	apiVersion: 3,
 	    	theme: 'light', // Check out our new 'light' and 'dark' themes!
 	    	tools: 'all',
-	    	appendTo: '',
+	    	appendTo: 'injection_site',
+	    	onSaveButtonClicked: function() {
+	    		featherEditor.saveHiRes();
+	    	},
 	    	onSave: function(imageID, newURL) {
 	        	var img = document.getElementById(imageID);
 	        	img.src = newURL;
 	    	},
-	    	onSaveButtonClicked: function() {
-	    		editor.saveHiRes();
-	            // return false;
-	    	},
+	    	postUrl: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
+	    	// onSaveHiRes: function(imgID, newURL) {},
 	    	onError: function(errorObj) {
 	        	alert(errorObj.message);
 	    	}

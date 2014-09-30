@@ -72,6 +72,7 @@
 	    	onSaveButtonClicked: function() {
 	    		featherEditor.saveHiRes();
 	    		console.log('.saveHiRes() method sent');
+	    		console.log(mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php');
 	    		featherEditor.save();
 	    	},
 	    	onSave: function(imageID, newURL) {

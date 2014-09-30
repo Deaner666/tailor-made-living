@@ -71,10 +71,12 @@
 	    	appendTo: 'injection_site',
 	    	onSaveButtonClicked: function() {
 	    		featherEditor.saveHiRes();
+	    		console.log('.saveHiRes() method sent');
 	    	},
 	    	onSave: function(imageID, newURL) {
 	        	var img = document.getElementById(imageID);
 	        	img.src = newURL;
+	        	console.log('Called from onSave function');
 	    	},
 	    	postUrl: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
 	    	// onSaveHiRes: function(imgID, newURL) {},

@@ -39,7 +39,7 @@
 			<div id="aviary-edit-button">
 				<h3>Make Your Image Awesome</h3>
 				<p>Apply special effects to your image, add text and more.</p>
-				<a class="fancy-button edit-image-icon" href="javascript:;" onclick="return launchEditor('aviary-image', jQuery('#image-upload-preview img').attr('src'));">
+				<a class="fancy-button edit-image-icon" href="javascript:;" onclick="return launchEditor( 'aviary-image', jQuery('#image-upload-preview img').attr('src') );">
 					Edit Image
 				</a>
 			</div>
@@ -73,14 +73,24 @@
 	        	var img = document.getElementById(imageID);
 	        	img.src = newURL;
 	    	},
+	    	onSaveButtonClicked: function() {
+	    		editor.saveHiRes();
+	            return false;
+	    	},
 	    	onError: function(errorObj) {
 	        	alert(errorObj.message);
 	    	}
 		});
 		function launchEditor(id, src) {
+			var auth = getAuth('aeae8484a8800725', '300a474918996da1', 'MD5');
 	    	featherEditor.launch({
 	    		image: id,
-	        	url: src
+	        	url: src,
+	        	timestamp: auth.timestamp,
+		    	salt: auth.salt,
+			    encryptionMethod: auth.encryptionMethod,
+			    signature: auth.signature,
+			    hiresUrl: 'https://www.google.com/images/srpr/logo3w.png' // TODO Get actual high res URL
 	    	});
 	    	return false;
 		}

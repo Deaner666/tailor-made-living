@@ -141,3 +141,43 @@ jQuery(document).ready( function() {
   }
 
 });
+
+// Function to generate unique signature to pass to Aviary HiRes API
+var getAuth = function(apikey, apisecret, method) {
+  var getSalt = function() {
+    return generateUUID(); // random id
+  };
+
+  var getUnixTimestamp = function() {
+    return (new Date()).getTime() / 1000; 
+  };
+
+  var getSignature = function(key, secret, timestamp, salt, encryptionmethod) {
+    // Concat string
+    var sig = key + secret + timestamp + salt;
+    // Encrypt
+    return SparkMD5.hash(sig);
+  };
+
+  var authObj = {
+    apiKey: apikey,
+    salt: getSalt(),
+    timestamp: getUnixTimestamp().toString(),
+    encryptionMethod: method
+  };
+
+  authObj.signature = getSignature(authObj.apiKey, apisecret, authObj.timestamp,  authObj.salt, authObj.encryptionMethod);
+
+  return authObj;
+}
+
+// Function to generate a random version 4 GUID
+function generateUUID() {
+  var d = new Date().getTime();
+  var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = (d + Math.random()*16)%16 | 0;
+    d = Math.floor(d/16);
+    return (c=='x' ? r : (r&0x7|0x8)).toString(16);
+  });
+  return uuid;
+};

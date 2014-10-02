@@ -72,11 +72,8 @@
 	    	// onSaveButtonClicked: function() {},
 	    	onSave: function(imageID, newURL) {
 	    		featherEditor.saveHiRes();
-	    		console.log('.saveHiRes() method sent');
-	    		console.log(mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php');
 	    		var img = document.getElementById(imageID);
 	        	img.src = newURL;
-	        	console.log('Called from onSave function');
 	    	},
 	    	postUrl: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
 	    	// onSaveHiRes: function(imgID, newURL) {},

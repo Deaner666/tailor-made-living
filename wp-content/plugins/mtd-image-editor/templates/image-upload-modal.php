@@ -69,12 +69,10 @@
 	    	theme: 'light', // Check out our new 'light' and 'dark' themes!
 	    	tools: 'all',
 	    	appendTo: '',
-	    	onSaveButtonClicked: function() {
-	    		featherEditor.saveHiRes();
-	    		console.log('.saveHiRes() method sent from onSaveButtonClicked');
-	    		save();
-	    	},
+	    	// onSaveButtonClicked: function() {},
 	    	onSave: function(imageID, newURL) {
+	    		featherEditor.saveHiRes();
+	    		console.log('.saveHiRes() method sent');
 	    		console.log(mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php');
 	    		var img = document.getElementById(imageID);
 	        	img.src = newURL;

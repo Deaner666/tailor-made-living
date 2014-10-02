@@ -92,7 +92,7 @@
 			    signature: auth.signature,
 			    hiresUrl: 'https://www.google.com/images/srpr/logo3w.png' // TODO Get actual high res URL
 	    	});
-	    	return false;
+	    	// return false;
 		}
 	</script>
 

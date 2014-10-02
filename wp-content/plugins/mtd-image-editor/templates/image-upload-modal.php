@@ -74,10 +74,16 @@
 	    		featherEditor.saveHiRes();
 	    		var img = document.getElementById(imageID);
 	        	img.src = newURL;
-	        	featherEditor.close();
+	        	featherEditor.showWaitIndicator();
+	      //   	featherEditor.close();
 	    	},
 	    	postUrl: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
-	    	// onSaveHiRes: function(imgID, newURL) {},
+	    	onSaveHiRes: function(imgID, newURL) {
+	    		var img = document.getElementById(imageID);
+	        	img.src = newURL;
+	        	featherEditor.hideWaitIndicator();
+	        	featherEditor.close();
+	    	},
 	    	onError: function(errorObj) {
 	        	alert(errorObj.message);
 	    	}

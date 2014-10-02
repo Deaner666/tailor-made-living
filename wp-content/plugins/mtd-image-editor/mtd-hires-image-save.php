@@ -9,19 +9,7 @@ require_once( ABSPATH . 'wp-admin/includes/image.php' );
 require_once( ABSPATH . 'wp-admin/includes/file.php' );
 require_once( ABSPATH . 'wp-admin/includes/media.php' );
 
-///////////////////////////////////////////////////////////
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
-ob_start();
-var_dump($_REQUEST);
-$image_data = file_get_contents($_REQUEST['url']);
-file_put_contents("photo.jpg",$image_data);
-$msg = ob_get_contents();
-mail('You@Your.org', 'PostURL Data', $msg);
-ob_end_clean();
-///////////////////////////////////////////////////////////
-
-$url = $_POST['url'];
+$url = $_REQUEST['url'];
 $tmp = download_url( $url );
 $post_id = 0;
 $desc = "Edited with Aviary";
@@ -50,3 +38,15 @@ if ( is_wp_error( $attachment_id ) ) {
 
 $full_img = wp_get_attachment_image_src( $attachment_id, 'full' ); // upload-proxy
 echo '<img class="preview" alt="" src="'.$full_img[0].'" />';
+
+///////////////////////////////////////////////////////////
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ob_start();
+var_dump($_REQUEST);
+$image_data = file_get_contents($_REQUEST['url']);
+file_put_contents("photo.jpg",$image_data);
+$msg = ob_get_contents();
+mail('You@Your.org', 'PostURL Data', $msg);
+ob_end_clean();
+///////////////////////////////////////////////////////////

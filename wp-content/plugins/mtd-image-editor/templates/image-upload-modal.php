@@ -88,6 +88,7 @@
 		});
 		function launchEditor(id, src) {
 			var auth = getAuth('aeae8484a8800725', '300a474918996da1', 'MD5');
+	    	console.log(jQuery(".preview").attr('src'));
 	    	featherEditor.launch({
 	    		image: id,
 	        	url: src,

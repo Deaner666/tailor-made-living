@@ -9,19 +9,6 @@ require_once( ABSPATH . 'wp-admin/includes/image.php' );
 require_once( ABSPATH . 'wp-admin/includes/file.php' );
 require_once( ABSPATH . 'wp-admin/includes/media.php' );
 
-
-///////////////////////////////////////////////////////////
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
-ob_start();
-var_dump($_REQUEST);
-
-
-
-
-
-
-
 $url = $_REQUEST['url'];
 $tmp = download_url( $url );
 $post_id = 0;
@@ -51,13 +38,3 @@ if ( is_wp_error( $attachment_id ) ) {
 
 $full_img = wp_get_attachment_image_src( $attachment_id, 'full' ); // upload-proxy
 echo '<img class="preview" alt="" src="'.$full_img[0].'" />';
-
-
-
-
-
-
-$msg = ob_get_contents();
-mail('dave@print-2-media.com', 'PostURL Data', $msg);
-ob_end_clean();
-///////////////////////////////////////////////////////////

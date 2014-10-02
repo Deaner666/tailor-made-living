@@ -12,12 +12,11 @@ require_once( ABSPATH . 'wp-admin/includes/media.php' );
 // $img = $_FILES['img'];
 $img = file_get_contents($_REQUEST['url']);
 
-$upload_overrides = array( 'test_form' => false );
-$movefile = wp_handle_upload( $img, $upload_overrides );
-if ( $movefile ) {
-    // echo "File is valid, and was successfully uploaded.\n";
-    // var_dump( $movefile);
-    echo $movefile['url'];
+$attachment_id = media_handle_upload( $img, 0 );
+if ( !is_wp_error( $attachment_id ) ) {
+    $full_img = wp_get_attachment_image_src( $attachment_id, 'full' ); // upload-proxy
+    echo '<img class="preview" alt="" src="'.$full_img[0].'" />';
+    // echo $movefile['url'];
 } else {
     echo "Possible file upload attack!\n";
 }

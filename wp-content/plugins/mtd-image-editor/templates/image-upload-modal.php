@@ -95,7 +95,7 @@
 		    	salt: auth.salt,
 			    encryptionMethod: auth.encryptionMethod,
 			    signature: auth.signature,
-			    hiresUrl: 'https://www.google.com/images/srpr/logo3w.png' // TODO Get actual high res URL
+			    hiresUrl: jQuery(".preview").attr('src')
 	    	});
 	    	return false;
 		}

@@ -74,6 +74,7 @@
 	    		featherEditor.saveHiRes();
 	    		var img = document.getElementById(imageID);
 	        	img.src = newURL;
+	        	featherEditor.close();
 	    	},
 	    	postUrl: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
 	    	// onSaveHiRes: function(imgID, newURL) {},
@@ -92,7 +93,7 @@
 			    signature: auth.signature,
 			    hiresUrl: 'https://www.google.com/images/srpr/logo3w.png' // TODO Get actual high res URL
 	    	});
-	    	// return false;
+	    	return false;
 		}
 	</script>
 

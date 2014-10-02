@@ -69,20 +69,18 @@
 	    	theme: 'light', // Check out our new 'light' and 'dark' themes!
 	    	tools: 'all',
 	    	appendTo: '',
-	    	// onSaveButtonClicked: function() {},
-	    	onSave: function(imageID, newURL) {
+	    	onSaveButtonClicked: function() {
 	    		featherEditor.saveHiRes();
-	    		var img = document.getElementById(imageID);
-	        	img.src = newURL;
-	        	featherEditor.showWaitIndicator();
-	      //   	featherEditor.close();
 	    	},
+	    	// onSave: function(imageID, newURL) {
+	    	// 	var img = document.getElementById(imageID);
+	     //    	img.src = newURL;
+	    	// },
 	    	postUrl: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
 	    	onSaveHiRes: function(imgID, newURL) {
 	    		var img = document.getElementById(imageID);
 	        	img.src = newURL;
-	        	featherEditor.hideWaitIndicator();
-	        	featherEditor.close();
+	        	// featherEditor.close();
 	    	},
 	    	onError: function(errorObj) {
 	        	alert(errorObj.message);

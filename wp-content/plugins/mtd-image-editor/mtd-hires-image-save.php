@@ -9,14 +9,32 @@ require_once( ABSPATH . 'wp-admin/includes/image.php' );
 require_once( ABSPATH . 'wp-admin/includes/file.php' );
 require_once( ABSPATH . 'wp-admin/includes/media.php' );
 
-// $img = $_FILES['img'];
-$img = $_REQUEST['url'];
+$url = $_REQUEST['url'];
+$tmp = download_url( $url );
+$post_id = 0;
+$desc = "Edited with Aviary";
+$file_array = array();
 
-$attachment_id = media_handle_upload( $img, 0 );
-if ( !is_wp_error( $attachment_id ) ) {
-    $full_img = wp_get_attachment_image_src( $attachment_id, 'full' ); // upload-proxy
-    echo '<img class="preview" alt="" src="'.$full_img[0].'" />';
-    // echo $movefile['url'];
-} else {
-    echo "Possible file upload attack!\n";
+// Set variables for storage
+// fix file filename for query strings
+preg_match('/[^\?]+\.(jpg|jpe|jpeg|gif|png)/i', $url, $matches);
+$file_array['name'] = basename($matches[0]);
+$file_array['tmp_name'] = $tmp;
+
+// If error storing temporarily, unlink
+if ( is_wp_error( $tmp ) ) {
+	@unlink($file_array['tmp_name']);
+	$file_array['tmp_name'] = '';
 }
+
+// Let WordPress handle file creation and adding to the media library
+$attachment_id = media_handle_sideload( $file_array, $post_id, $desc );
+
+if ( is_wp_error( $attachment_id ) ) {
+	echo $attachment_id->get_error_message();
+	@unlink($file_array['tmp_name']);
+	return $id;
+}
+
+$full_img = wp_get_attachment_image_src( $attachment_id, 'full' ); // upload-proxy
+echo '<img class="preview" alt="" src="'.$full_img[0].'" />';

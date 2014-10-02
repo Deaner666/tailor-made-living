@@ -69,6 +69,7 @@
 	    	theme: 'light', // Check out our new 'light' and 'dark' themes!
 	    	tools: 'all',
 	    	appendTo: '',
+	    	enableCORS: true,
 	    	onSaveButtonClicked: function() {
 	    		featherEditor.saveHiRes();
 	    	},

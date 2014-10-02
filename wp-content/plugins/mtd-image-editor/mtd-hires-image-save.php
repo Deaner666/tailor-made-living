@@ -10,7 +10,7 @@ require_once( ABSPATH . 'wp-admin/includes/file.php' );
 require_once( ABSPATH . 'wp-admin/includes/media.php' );
 
 // $img = $_FILES['img'];
-$img = file_get_contents($_REQUEST['url']);
+$img = $_REQUEST['url'];
 
 $attachment_id = media_handle_upload( $img, 0 );
 if ( !is_wp_error( $attachment_id ) ) {

@@ -80,7 +80,7 @@
 	    	onSaveHiRes: function(imageID, newURL) {
 	    		var img = document.getElementById(imageID);
 	        	img.src = newURL;
-	        	// featherEditor.close();
+	        	featherEditor.close();
 	    	},
 	    	onError: function(errorObj) {
 	        	alert(errorObj.message);

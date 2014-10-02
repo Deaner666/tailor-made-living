@@ -27,7 +27,7 @@ if(isset($_FILES['form-image']) && ($_FILES['form-image']['size'] > 0)) {
     if ($_FILES['form-image']['size'] < $max_size) {
       $attachment_id = media_handle_upload( 'form-image', 0 );
       if ( !is_wp_error( $attachment_id ) ) {
-        $proxy_img = wp_get_attachment_image_src( $attachment_id, 'upload-proxy' );
+        $proxy_img = wp_get_attachment_image_src( $attachment_id, 'full' );
         echo '<img class="preview" alt="" src="'.$proxy_img[0].'" />';
       } else { echo $attachment_id->get_error_message(); } // end if media_handle_upload
     } else { echo "Error: File is larger than 12MB"; } // end if < $max_size

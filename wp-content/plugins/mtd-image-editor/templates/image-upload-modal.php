@@ -73,10 +73,10 @@
 	    	onSaveButtonClicked: function() {
 	    		featherEditor.saveHiRes();
 	    	},
-	    	// onSave: function(imageID, newURL) {
-	    	// 	var img = document.getElementById(imageID);
-	     //    	img.src = newURL;
-	    	// },
+	    	//	onSave: function(imageID, newURL) {
+	    	// 		var img = document.getElementById(imageID);
+	        //		img.src = newURL;
+	    	//	},
 	    	postUrl: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
 	    	onSaveHiRes: function(imageID, newURL) {
 	    		var img = document.getElementById(imageID);

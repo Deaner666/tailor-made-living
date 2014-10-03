@@ -77,10 +77,17 @@
 	    	// 		var img = document.getElementById(imageID);
 	        //		img.src = newURL;
 	    	//	},
-	    	postUrl: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
+	    	// postUrl: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
 	    	onSaveHiRes: function(imageID, newURL) {
 	    		var img = document.getElementById(imageID);
 	        	img.src = newURL;
+	        	jQuery.ajax(function(){
+	        		type: 'POST',
+	        		data: {url: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php' },
+	        		success: function(response) {
+	        			console.log('Succes POSTing to postUrl');
+	        		}
+	        	});
 	        	featherEditor.close();
 	    	},
 	    	onError: function(errorObj) {

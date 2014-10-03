@@ -73,7 +73,7 @@
 	    	onSaveButtonClicked: function() {
 	    		// disable the jQuery dialog save button whilst we wait for the crop image to update
 	    		jQuery('button.ui-button').prop('disabled', true);
-	    		jQuery('button.ui-button').html('Please wait...');
+	    		jQuery('button.ui-button span').html('Please wait...');
 	    		featherEditor.saveHiRes();
 	    	},
 	    	//	onSave: function(imageID, newURL) {
@@ -90,10 +90,10 @@
 	        		data: 'url='+newURL,
 	        		success: function(response) {
 	        			img.src = response;
-	        			img.load(function() {
+	        			img.get(0).onload = function() {
 	        				jQuery('button.ui-button').prop('disabled', false);
-		        			jQuery('button.ui-button').html('Save');
-	        			});
+		        			jQuery('button.ui-button span').html('Save');
+	        			}
 	        		}
 	        	});
 	        	featherEditor.close();

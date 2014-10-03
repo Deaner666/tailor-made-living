@@ -82,15 +82,15 @@
 	    	//	},
 	    	// postUrl: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
 	    	onSaveHiRes: function(imageID, newURL) {
-	    		var img = document.getElementById(imageID);
-	    		// var img = jQuery(imageID); // Doesn't work for some reason
+	    		// var img = document.getElementById(imageID);
+	    		var img = jQuery('.preview');
 	        	// img.src = newURL;
 	        	jQuery.ajax({
 	        		type: 'POST',
 	        		url: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
 	        		data: 'url='+newURL,
 	        		success: function(response) {
-	        			img.src = response;
+	        			img.attr('src', response);
 	        			img.on('load', function() {
 	        				jQuery('button.ui-button').prop('disabled', false);
 		        			jQuery('button.ui-button span').html('Save');

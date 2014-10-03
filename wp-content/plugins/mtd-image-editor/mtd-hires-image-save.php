@@ -10,7 +10,7 @@ require_once( ABSPATH . 'wp-admin/includes/file.php' );
 require_once( ABSPATH . 'wp-admin/includes/media.php' );
 
 $url = $_POST['url'];
-$tmp = download_url( $url );
+$tmp = $_POST['url']; // download_url( $url );
 $post_id = 0;
 $desc = "Edited with Aviary";
 $file_array = array();

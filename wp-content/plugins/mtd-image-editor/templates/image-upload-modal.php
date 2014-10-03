@@ -73,18 +73,11 @@
 	    	onSaveButtonClicked: function() {
 	    		// disable the jQuery dialog save button whilst we wait for the crop image to update
 	    		jQuery('button.ui-button').prop('disabled', true);
-	    		jQuery('button.ui-button span').html('Please wait...');
+	    		jQuery('button.ui-button span').html('Please wait, image updating...');
 	    		featherEditor.saveHiRes();
 	    	},
-	    	//	onSave: function(imageID, newURL) {
-	    	// 		var img = document.getElementById(imageID);
-	        //		img.src = newURL;
-	    	//	},
-	    	// postUrl: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
 	    	onSaveHiRes: function(imageID, newURL) {
-	    		// var img = document.getElementById(imageID);
 	    		var img = jQuery('.preview');
-	        	// img.src = newURL;
 	        	jQuery.ajax({
 	        		type: 'POST',
 	        		url: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',

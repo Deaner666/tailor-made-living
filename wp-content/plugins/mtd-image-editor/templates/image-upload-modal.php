@@ -81,9 +81,9 @@
 	    	onSaveHiRes: function(imageID, newURL) {
 	    		var img = document.getElementById(imageID);
 	        	img.src = newURL;
-	        	jQuery.ajax(function(){
+	        	jQuery.ajax({
 	        		type: 'POST',
-	        		url: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php'
+	        		url: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
 	        		data: 'url='+newURL,
 	        		success: function(response) {
 	        			console.log('Success POSTing to postUrl');

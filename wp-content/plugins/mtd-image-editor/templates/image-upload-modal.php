@@ -82,8 +82,8 @@
 	    	//	},
 	    	// postUrl: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
 	    	onSaveHiRes: function(imageID, newURL) {
-	    		// var img = document.getElementById(imageID);
-	    		var img = jQuery(imageID);
+	    		var img = document.getElementById(imageID);
+	    		// var img = jQuery(imageID); // Doesn't work for some reason
 	        	// img.src = newURL;
 	        	jQuery.ajax({
 	        		type: 'POST',

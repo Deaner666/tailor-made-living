@@ -90,7 +90,7 @@
 	        		data: 'url='+newURL,
 	        		success: function(response) {
 	        			img.src = response;
-	        			img.get(0).onload = function() {
+	        			jQuery(imageID).get(0).onload = function() {
 	        				jQuery('button.ui-button').prop('disabled', false);
 		        			jQuery('button.ui-button span').html('Save');
 	        			}

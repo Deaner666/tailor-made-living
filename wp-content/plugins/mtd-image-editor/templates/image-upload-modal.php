@@ -90,10 +90,10 @@
 	        		data: 'url='+newURL,
 	        		success: function(response) {
 	        			img.src = response;
-	        			jQuery(imageID).get(0).onload = function() {
+	        			img.on('load', function() {
 	        				jQuery('button.ui-button').prop('disabled', false);
 		        			jQuery('button.ui-button span').html('Save');
-	        			}
+	        			});
 	        		}
 	        	});
 	        	featherEditor.close();

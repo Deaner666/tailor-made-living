@@ -37,4 +37,4 @@ if ( is_wp_error( $attachment_id ) ) {
 }
 
 $full_img = wp_get_attachment_image_src( $attachment_id, 'full' ); // upload-proxy
-echo '<img class="preview" alt="" src="'.$full_img[0].'" />';
+echo $full_img[0];

@@ -86,7 +86,8 @@
 	        		url: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
 	        		data: 'url='+newURL,
 	        		success: function(response) {
-	        			console.log('Success POSTing to postUrl');
+	        			console.log('Success POSTing to postUrl. Response = '+response);
+	        			img.src = response;
 	        		}
 	        	});
 	        	featherEditor.close();

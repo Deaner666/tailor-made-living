@@ -83,9 +83,9 @@
 	        	img.src = newURL;
 	        	jQuery.ajax(function(){
 	        		type: 'POST',
-	        		data: {url: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php' },
+	        		data: 'url='+mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
 	        		success: function(response) {
-	        			console.log('Succes POSTing to postUrl');
+	        			console.log('Success POSTing to postUrl');
 	        		}
 	        	});
 	        	featherEditor.close();

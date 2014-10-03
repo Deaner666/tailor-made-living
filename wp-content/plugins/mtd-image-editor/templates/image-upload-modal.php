@@ -71,6 +71,8 @@
 	    	appendTo: '',
 	    	enableCORS: true,
 	    	onSaveButtonClicked: function() {
+	    		// disable the jQuery dialog save button whilst we wait for the crop image to update
+	    		jQuery('button.ui-button').prop('disabled', true);
 	    		featherEditor.saveHiRes();
 	    	},
 	    	//	onSave: function(imageID, newURL) {
@@ -80,14 +82,14 @@
 	    	// postUrl: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
 	    	onSaveHiRes: function(imageID, newURL) {
 	    		var img = document.getElementById(imageID);
-	        	img.src = newURL;
+	        	// img.src = newURL;
 	        	jQuery.ajax({
 	        		type: 'POST',
 	        		url: mtd_site_url+'/wp-content/plugins/mtd-image-editor/mtd-hires-image-save.php',
 	        		data: 'url='+newURL,
 	        		success: function(response) {
-	        			console.log('Success POSTing to postUrl. Response = '+response);
 	        			img.src = response;
+	        			jQuery('button.ui-button').prop('disabled', false);
 	        		}
 	        	});
 	        	featherEditor.close();

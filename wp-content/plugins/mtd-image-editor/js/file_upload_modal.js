@@ -50,6 +50,10 @@ jQuery(document).ready( function() {
             doSaveCrop();
           };
 
+          // Hide the upload image button on the main page
+          jQuery('#image-upload-lead-in').hide();
+          jQuery('#image-upload-done').show();
+
           // Close the dialog
           jQuery( this ).dialog( "close" );
         } else {

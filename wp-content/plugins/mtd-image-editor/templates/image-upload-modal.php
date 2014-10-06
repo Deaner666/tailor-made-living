@@ -15,6 +15,10 @@
 		</a>
 	</div>
 
+	<div id="image-upload-done" class="woocommerce-message">
+		<p>Cool. You uploaded your image and you're ready to order! </p>
+	</div>
+
 	<article id="image-upload-modal">
 		<header>
 			<h1>Upload your image</h1>

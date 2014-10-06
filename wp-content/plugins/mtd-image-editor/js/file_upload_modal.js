@@ -55,8 +55,8 @@ jQuery(document).ready( function() {
           jQuery('#image-upload-done').show();
 
           // Disable the width and height fields on the main page
-          jQuery('.sync-width input').disable();
-          jQuery('.sync-height input').disable();
+          jQuery('.sync-width input').prop('disabled', true);
+          jQuery('.sync-height input').prop('disabled', true);
 
           // Close the dialog
           jQuery( this ).dialog( "close" );

@@ -88,10 +88,10 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 
                 <div id="home-page-buttons">
                     <ul>
-                        <li><a href="">Custom Wallpaper</a></li>
-                        <li><a href="">Mounted Print</a></li>
-                        <li><a href="">Personalised Poster</a></li>
-                        <li><a href="">Printed Canvas</a></li>
+                        <li><a href="http://www.tailormade-living.co.uk/product/custom-printed-wallpaper/">Custom Wallpaper</a></li>
+                        <li><a href="http://www.tailormade-living.co.uk/product/custom-mounted-prints/">Mounted Print</a></li>
+                        <li><a href="http://www.tailormade-living.co.uk/product/personalised-posters/">Personalised Poster</a></li>
+                        <li><a href="http://www.tailormade-living.co.uk/product/custom-printed-canvases/">Printed Canvas</a></li>
                     </ul>
                 </div>
 

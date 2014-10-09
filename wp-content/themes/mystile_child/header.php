@@ -58,7 +58,7 @@ global $woo_options, $woocommerce;
 
 		<div id="social-and-cart">
 			<ul class="social-buttons">
-				<li class="twitter"><a href="#">Twitter</a></li>
+				<li class="twitter"><a href="https://twitter.com/TailorMade_Life">Twitter</a></li>
 				<li class="facebook"><a href="#">Facebook</a></li>
 				<li class="pinterest"><a href="#">Pinterest</a></li>
 				<li class="google-plus"><a href="https://plus.google.com/111875943842016842442" rel="publisher">Google+</a></li>

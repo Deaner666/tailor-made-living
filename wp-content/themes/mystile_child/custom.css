@@ -327,6 +327,17 @@ Gravity forms
   width: 1.618em !important;
 }
 /*-------------------------------------------------------*
+Mijireh forms
+*-------------------------------------------------------*/
+.mijireh_order_form input[type=text] {
+  -webkit-box-sizing: content-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: content-box;
+  /* Firefox, other Gecko */
+  box-sizing: content-box;
+  /* Opera/IE 8+ */
+}
+/*-------------------------------------------------------*
 Incidentals
 *-------------------------------------------------------*/
 body.home #breadcrumbs {

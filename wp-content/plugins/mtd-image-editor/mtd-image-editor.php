@@ -105,6 +105,38 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 
     //////////////////////////////////////////////////
     // 
+    // Gravity Forms Custom Validation for hidden fields
+    // 
+    //////////////////////////////////////////////////
+
+    add_filter("gform_validation_1", "validate_hidden_fields");
+
+    function validate_hidden_fields($validation_result) {
+        $form = $validation_result['form'];
+
+        foreach( $form["fields"] as &$field ) {
+            if ( rgpost("input_{$field['id']}") == 'image_url' OR rgpost("input_{$field['id']}") == 'cropped_image_url' ) {
+                $validation_result["is_valid"] = false;
+                $field["failed_validation"] = true;
+                $field["validation_message"] = '<div class="validation_error">Aww heck, something went wrong. Did you upload an image?</div>';
+            }
+            continue;
+        }
+
+        $validation_result['form'] = $form;
+        return $validation_result;
+    }
+
+    add_filter("gform_validation_message_1", "change_message", 10, 2);
+    
+    function change_message($message, $form) {
+      return '<div class="validation_error">Aww heck, something went wrong. Did you upload an image?</div>';
+    }
+
+
+
+    //////////////////////////////////////////////////
+    // 
     // Plugin deactivation
     // 
     //////////////////////////////////////////////////

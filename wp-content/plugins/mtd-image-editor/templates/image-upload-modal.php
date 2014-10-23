@@ -27,6 +27,7 @@
 		<div id="image-edit-forms">
 
 			<form id="image-upload-form" name="image-upload-form" method="post" action="<?php echo $form_action ?>" enctype="multipart/form-data">
+				<?php wp_nonce_field('upload-image', 'upload-form-nonce'); ?>
 				<ul class="form-fields">
 					<li>
 						<div class="form-label"><label for="form-image">Choose an image to upload</label></div>

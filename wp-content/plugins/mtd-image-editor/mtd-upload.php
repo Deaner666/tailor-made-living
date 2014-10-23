@@ -4,6 +4,14 @@ require_once( dirname( dirname( dirname( dirname( __FILE__ )))) . '/wp-load.php'
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
+if ( 
+    ! isset( $_POST['upload-form-nonce'] ) 
+    || ! wp_verify_nonce( $_POST['upload-form-nonce'], 'upload-image' ) 
+) {
+   print 'Form submission failed security check.';
+   exit;
+}
+
 // These files need to be included as dependencies when on the front end.
 require_once( ABSPATH . 'wp-admin/includes/image.php' );
 require_once( ABSPATH . 'wp-admin/includes/file.php' );

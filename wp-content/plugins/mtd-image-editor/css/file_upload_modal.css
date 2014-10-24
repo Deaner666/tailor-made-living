@@ -17,6 +17,7 @@
 .image-dimensions-field { display: none; clear: both; }
 .image-dimensions-field input { clear: both; }
 .image-dimensions-field label { display: block; }
+.image-dimensions-field select { width: 100%; }
 .wall-width, .wall-height { margin-bottom: 1.2em; width: 48%; }
 .wall-width { float: left; }
 .wall-height { float: right; }

@@ -49,17 +49,59 @@
 				</a>
 			</div>
 
-			<div class="image-dimensions-field">
-				<h3>Your Wall Dimensions</h3>
-				<div class="wall-width">
-					<label for="modal-width">Width (cm)</label>
-					<input id="modal-width" class="sync-width-modal" type="number" step="any" />
-				</div>
-				<div class="wall-height">
-					<label for="modal-height">Height (cm)</label>
-					<input id="modal-height" class="sync-height-modal" type="number" step="any" />
-				</div>
-			</div>
+			<?php
+			// Determine which product we're on and which width and height fields we need to show
+			switch ( $post->post_name ) {
+				case 'custom-wallpaper':
+			?>
+					<div class="image-dimensions-field">
+						<h3>Your Wall Dimensions</h3>
+						<div class="wall-width">
+							<label for="modal-width">Width (cm)</label>
+							<input id="modal-width" class="sync-width-modal" type="number" step="any" />
+						</div>
+						<div class="wall-height">
+							<label for="modal-height">Height (cm)</label>
+							<input id="modal-height" class="sync-height-modal" type="number" step="any" />
+						</div>
+					</div>
+			<?php 
+					break;
+				case 'canvas-prints':
+			?>
+					<div class="image-dimensions-field">
+						<h3>Your Canvas Dimensions</h3>
+						<div class="wall-width">
+							<label for="modal-width">Width (in)</label>
+							<select id="modal-width" class="sync-width-modal">
+								<option value='8' >8</option>
+								<option value='12' >12</option>
+								<option value='16' >16</option>
+								<option value='18' >18</option>
+								<option value='24' >24</option>
+								<option value='30' >30</option>
+								<option value='32' >32</option>
+								<option value='36' >36</option>
+							</select>
+						</div>
+						<div class="wall-height">
+							<label for="modal-height">Height (in)</label>
+							<select id="modal-height" class="sync-height-modal">
+								<option value='8' >8</option>
+								<option value='12' >12</option>
+								<option value='16' >16</option>
+								<option value='18' >18</option>
+								<option value='24' >24</option>
+								<option value='30' >30</option>
+								<option value='32' >32</option>
+								<option value='36' >36</option>
+							</select>
+						</div>
+					</div>
+			<?php
+					break;
+			}
+			?>
 
 		</div>
 

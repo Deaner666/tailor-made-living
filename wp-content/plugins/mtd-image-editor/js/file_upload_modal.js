@@ -1,24 +1,48 @@
 jQuery(document).ready( function() {
-
-  // Keep width and heigh input fields in sync
-  jQuery(".sync-width input").keyup(function(){
-    jQuery(".sync-width-modal").val(jQuery(".sync-width input").val());
-    jQuery( ".sync-width-modal" ).trigger( "change" );
-  });
-  jQuery(".sync-height input").keyup(function(){
-    jQuery(".sync-height-modal").val(jQuery(".sync-height input").val());
-    jQuery( ".sync-height-modal" ).trigger( "change" );
-  });
-  jQuery(".sync-width-modal").keyup(function(){
-    jQuery(".sync-width input").val(jQuery(".sync-width-modal").val());
-    jQuery( ".sync-width input" ).trigger( "change" );
-    doCrop();
-  });
-  jQuery(".sync-height-modal").keyup(function(){
-    jQuery(".sync-height input").val(jQuery(".sync-height-modal").val());
-    jQuery( ".sync-height input" ).trigger( "change" );
-    doCrop();
-  });
+  // Check if we're on a canvas product with selects instead of inputs
+  if ( jQuery(".sync-width select").val() > 0 ) {
+    // Keep width and heigh select fields in sync on canvas prints product
+    jQuery(document.body).on("change", ".sync-width select", function(){
+      console.log('page width changed');
+      jQuery(".sync-width-modal").val(jQuery(".sync-width select").val());
+      jQuery( ".sync-width-modal" ).trigger( "mouseup" ); // Use mouseup so we don't trigger a recurring change event
+    });
+    jQuery(document.body).on("change", ".sync-height select", function(){
+      console.log('page height changed');
+      jQuery(".sync-height-modal").val(jQuery(".sync-height select").val());
+      jQuery( ".sync-height-modal" ).trigger( "mouseup" ); // Use mouseup so we don't trigger a recurring change event
+    });
+    jQuery(".sync-width-modal").change(function(){
+      jQuery(".sync-width select").val(jQuery(".sync-width-modal").val());
+      jQuery( ".sync-width select" ).trigger( "mouseup" ); // Use mouseup so we don't trigger a recurring change event
+      doCrop();
+    });
+    jQuery(".sync-height-modal").change(function(){
+      jQuery(".sync-height select").val(jQuery(".sync-height-modal").val());
+      jQuery( ".sync-height select" ).trigger( "mouseup" ); // Use mouseup so we don't trigger a recurring change event
+      doCrop();
+    });
+  } else {
+    // Keep width and heigh input fields in sync on custom wallpaper product
+    jQuery(".sync-width input").keyup(function(){
+      jQuery(".sync-width-modal").val(jQuery(".sync-width input").val());
+      jQuery( ".sync-width-modal" ).trigger( "change" );
+    });
+    jQuery(".sync-height input").keyup(function(){
+      jQuery(".sync-height-modal").val(jQuery(".sync-height input").val());
+      jQuery( ".sync-height-modal" ).trigger( "change" );
+    });
+    jQuery(".sync-width-modal").keyup(function(){
+      jQuery(".sync-width input").val(jQuery(".sync-width-modal").val());
+      jQuery( ".sync-width input" ).trigger( "change" );
+      doCrop();
+    });
+    jQuery(".sync-height-modal").keyup(function(){
+      jQuery(".sync-height input").val(jQuery(".sync-height-modal").val());
+      jQuery( ".sync-height input" ).trigger( "change" );
+      doCrop();
+    });
+  };
 
   // Monitor filename of uploaded image so we can pass it to doCropSave()
   var uploadedFilename = "";

@@ -1,8 +1,41 @@
 <?php
 
-	add_action( 'wp_enqueue_scripts', 'mtd_load_dashicons' );
-	function mtd_load_dashicons() {
+	add_action( 'wp_enqueue_scripts', 'p2m_load_dashicons' );
+	function p2m_load_dashicons() {
 	    wp_enqueue_style( 'dashicons' );
+	}
+
+	add_action( 'wp_enqueue_scripts', 'p2m_load_custom_js' );
+	function p2m_load_custom_js() {
+		wp_register_script( 'custom-js', get_stylesheet_directory_uri() . '/includes/js/custom.js', array( 'jquery', 'wp-color-picker' ) );
+     	wp_enqueue_script( 'custom-js' );
+     }
+
+	if (  is_product( 'canvas-prints' ) ) {
+		add_action( 'wp_enqueue_scripts', 'colour_picker_scripts', 100 );
+		function colour_picker_scripts() {
+	        wp_enqueue_style( 'wp-color-picker' );
+	        wp_enqueue_script(
+	            'iris',
+	            admin_url( 'js/iris.min.js' ),
+	            array( 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch' ),
+	            false,
+	            1
+	        );
+	        wp_enqueue_script(
+	            'wp-color-picker',
+	            admin_url( 'js/color-picker.min.js' ),
+	            array( 'iris' ),
+	            false,
+	            1
+	        );
+	        $colorpicker_l10n = array(
+	            'clear' => __( 'Clear' ),
+	            'defaultString' => __( 'Default' ),
+	            'pick' => __( 'Select Color' )
+	        );
+	        wp_localize_script( 'wp-color-picker', 'wpColorPickerL10n', $colorpicker_l10n ); 
+	    }
 	}
 
 	add_shortcode( 'best_selling_products_by_cat', 'best_selling_products_by_cat' );

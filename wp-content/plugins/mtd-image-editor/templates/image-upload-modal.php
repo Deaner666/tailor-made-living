@@ -110,11 +110,12 @@
 
 	<!-- Instantiate Feather -->
 	<script type='text/javascript'>
+		var toolsToUse = ['redeye', 'blemish', 'effects', 'enhance', 'warmth', 'brightness', 'contrast', 'saturation', 'whiten', 'sharpness', 'focus', 'colorsplash', 'draw', 'text', 'stickers', 'orientation'];
 		var featherEditor = new Aviary.Feather({
 	    	apiKey: 'aeae8484a8800725',
 	    	apiVersion: 3,
 	    	theme: 'light', // Check out our new 'light' and 'dark' themes!
-	    	tools: 'redeye, blemish, effects, enhance, warmth, brightness, contrast, saturation, whiten, sharpness, focus, colorsplash, draw, text, stickers, orientation',
+	    	tools: toolsToUse,
 	    	appendTo: '',
 	    	enableCORS: true,
 	    	onSaveButtonClicked: function() {

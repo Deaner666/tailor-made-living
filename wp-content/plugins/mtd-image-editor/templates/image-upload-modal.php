@@ -110,7 +110,7 @@
 
 	<!-- Instantiate Feather -->
 	<script type='text/javascript'>
-		var toolsToUse = ['redeye', 'blemish', 'effects', 'enhance', 'warmth', 'brightness', 'contrast', 'saturation', 'whiten', 'sharpness', 'focus', 'colorsplash', 'draw', 'text', 'stickers', 'orientation'];
+		var toolsToUse = ['redeye', 'blemish', 'effects', 'enhance', 'warmth', 'brightness', 'contrast', 'saturation', 'whiten', 'sharpness', 'focus', 'colorsplash', 'draw', 'stickers', 'orientation'];
 		var featherEditor = new Aviary.Feather({
 	    	apiKey: 'aeae8484a8800725',
 	    	apiVersion: 3,

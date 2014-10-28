@@ -56,6 +56,10 @@ global $woo_options, $woocommerce;
 			</a>
 		</h1>
 
+		<div id="free-delivery-notice">
+			<img class="delivery-notice" src="<?php echo site_url(); ?>/wp-content/themes/mystile_child/images/layout/free-delivery.png" alt="Tailor Made Living offers free delivery on all products" />
+		</div>
+
 		<div id="social-and-cart">
 			<ul class="social-buttons">
 				<li class="twitter"><a href="https://twitter.com/TailorMade_Life">Twitter</a></li>

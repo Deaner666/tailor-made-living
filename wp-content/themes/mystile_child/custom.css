@@ -48,7 +48,8 @@ Masthead
 }
 #top .top-nav-block {
   float: right;
-  width: 40%;
+  width: 45%;
+  min-width: 45%;
   background: #212d58;
   -webkit-border-bottom-left-radius: 8px;
   -webkit-border-bottom-right-radius: 8px;
@@ -83,7 +84,8 @@ Masthead
 }
 /* Logo */
 #header .site-title {
-  width: 40%;
+  width: 38%;
+  max-width: 38%;
   margin: -20px 0 20px 2%;
   padding: 0;
   float: left;
@@ -94,9 +96,23 @@ Masthead
   margin: 20px 5% 0 5%;
   padding: 0;
 }
+#header #free-delivery-notice {
+  width: 24%;
+  max-width: 24%;
+  float: left;
+  position: relative;
+}
+#header #free-delivery-notice img.delivery-notice {
+  height: 90px;
+  width: 197px;
+  min-width: 180px;
+  position: relative;
+  margin: 98px auto auto 20%;
+}
 /* Social buttons */
 #header #social-and-cart {
-  width: 27%;
+  width: 260px;
+  width: 285px;
   float: right;
   /* Cart */
 }
@@ -104,7 +120,8 @@ Masthead
   list-style-type: none;
   display: block;
   margin: 50px 2% 0 0;
-  width: 169.5px;
+  width: 285px;
+  min-width: 285px;
   float: right;
 }
 #header #social-and-cart ul.social-buttons li a {

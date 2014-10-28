@@ -114,7 +114,7 @@
 	    	apiKey: 'aeae8484a8800725',
 	    	apiVersion: 3,
 	    	theme: 'light', // Check out our new 'light' and 'dark' themes!
-	    	tools: 'all',
+	    	tools: 'redeye, blemish, effects, enhance, warmth, brightness, contrast, saturation, whiten, sharpness, focus, colorsplash, draw, text, stickers, orientation',
 	    	appendTo: '',
 	    	enableCORS: true,
 	    	onSaveButtonClicked: function() {

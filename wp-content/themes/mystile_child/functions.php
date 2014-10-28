@@ -1,19 +1,14 @@
 <?php
-
+	
 	add_action( 'wp_enqueue_scripts', 'p2m_load_dashicons' );
 	function p2m_load_dashicons() {
 	    wp_enqueue_style( 'dashicons' );
 	}
-
-	add_action( 'wp_enqueue_scripts', 'p2m_load_custom_js' );
-	function p2m_load_custom_js() {
-		wp_register_script( 'custom-js', get_stylesheet_directory_uri() . '/includes/js/custom.js', array( 'jquery', 'wp-color-picker' ) );
-     	wp_enqueue_script( 'custom-js' );
-     }
-
-	if (  is_product( 'canvas-prints' ) ) {
-		add_action( 'wp_enqueue_scripts', 'colour_picker_scripts', 100 );
-		function colour_picker_scripts() {
+	
+	
+	add_action( 'wp_enqueue_scripts', 'colour_picker_scripts' );
+	function colour_picker_scripts() {
+		if ( get_post_type() == 'product' ) {
 	        wp_enqueue_style( 'wp-color-picker' );
 	        wp_enqueue_script(
 	            'iris',
@@ -34,9 +29,15 @@
 	            'defaultString' => __( 'Default' ),
 	            'pick' => __( 'Select Color' )
 	        );
-	        wp_localize_script( 'wp-color-picker', 'wpColorPickerL10n', $colorpicker_l10n ); 
+	        wp_localize_script( 'wp-color-picker', 'wpColorPickerL10n', $colorpicker_l10n );
 	    }
-	}
+    }
+
+	add_action( 'wp_enqueue_scripts', 'p2m_load_custom_js' );
+	function p2m_load_custom_js() {
+		wp_register_script( 'custom-js', get_stylesheet_directory_uri() . '/includes/js/custom.js' );
+     	wp_enqueue_script( 'custom-js' );
+     }
 
 	add_shortcode( 'best_selling_products_by_cat', 'best_selling_products_by_cat' );
 

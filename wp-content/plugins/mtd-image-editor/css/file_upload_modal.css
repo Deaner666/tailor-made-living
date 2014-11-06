@@ -21,3 +21,7 @@
 .wall-width, .wall-height { margin-bottom: 1.2em; width: 48%; }
 .wall-width { float: left; }
 .wall-height { float: right; }
+
+.canvas-thumbs {
+	list-style-type: none;
+}

@@ -139,7 +139,7 @@ Masthead
     li { width: 16%; background: none; height: 60px; padding: 0 2% 0 2%; }
     li:hover {
       background: @tailormade-light-blue;
-      a { color: @tailormade-blue !important; background-color: @tailormade-light-blue !important; }
+      &> a { color: @tailormade-blue !important; background-color: @tailormade-light-blue !important; }
     }
   }
   ul.nav > li a {
@@ -169,11 +169,15 @@ Masthead
   border-radius: 4px;
   border-top-left-radius: 0;
 }
-#header #navigation ul.nav ul li { width: 100%; }
+#header #navigation ul.nav ul li { width: 96%; height: 100%; margin-bottom: 4%; }
+#header #navigation ul.nav ul li:first-child { margin-top: 2%;}
+#header #navigation ul.nav ul li:last-child { margin-bottom: 2%;}
+#header #navigation ul.nav ul li:hover { background: none; }
 #header #navigation ul.nav ul li a {
   text-align: left; padding: 2% 0 0 5%;
+  color: @tailormade-blue;
 }
-#header #navigation ul.nav ul li a:hover { background: #f7f7f7; }
+#header #navigation ul.nav ul li a:hover { background: @tailormade-blue !important; color: #fff !important; }
 #header #navigation ul.nav > li.parent a:after {
     font-family: 'WebSymbolsRegular'; display: inline-block;
     font-size: .857em; margin-left: .618em; content: ";";

@@ -236,7 +236,7 @@ Masthead
 #header #navigation ul li:hover {
   background: #eff5fa;
 }
-#header #navigation ul li:hover a {
+#header #navigation ul li:hover > a {
   color: #212d58 !important;
   background-color: #eff5fa !important;
 }
@@ -276,14 +276,27 @@ Masthead
   border-top-left-radius: 0;
 }
 #header #navigation ul.nav ul li {
-  width: 100%;
+  width: 96%;
+  height: 100%;
+  margin-bottom: 4%;
+}
+#header #navigation ul.nav ul li:first-child {
+  margin-top: 2%;
+}
+#header #navigation ul.nav ul li:last-child {
+  margin-bottom: 2%;
+}
+#header #navigation ul.nav ul li:hover {
+  background: none;
 }
 #header #navigation ul.nav ul li a {
   text-align: left;
   padding: 2% 0 0 5%;
+  color: #212d58;
 }
 #header #navigation ul.nav ul li a:hover {
-  background: #f7f7f7;
+  background: #212d58 !important;
+  color: #fff !important;
 }
 #header #navigation ul.nav > li.parent a:after {
   font-family: 'WebSymbolsRegular';

@@ -6,5 +6,7 @@ jQuery(document).ready(function() {
 	  //   jQuery(".quote-text-preview textarea").css( 'background', ui.color.toString());
 	  // }
 	}
-	jQuery('.my-color-field input').wpColorPicker(options);
+	if ( jQuery('.my-color-field input').length > 0 ) {
+		jQuery('.my-color-field input').wpColorPicker(options);
+	}
 });

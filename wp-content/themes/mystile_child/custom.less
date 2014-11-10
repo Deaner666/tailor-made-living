@@ -174,7 +174,7 @@ Masthead
 #header #navigation ul.nav ul li:last-child { margin-bottom: 2%;}
 #header #navigation ul.nav ul li:hover { background: none; }
 #header #navigation ul.nav ul li a {
-  text-align: left; padding: 2% 0 0 5%;
+  text-align: left; padding: 2% 0 0 5%; .border_radius(4px) !important;
   color: @tailormade-blue;
 }
 #header #navigation ul.nav ul li a:hover { background: @tailormade-blue !important; color: #fff !important; }
@@ -184,6 +184,7 @@ Masthead
     color: #fff; font-weight: normal;
   }
 #header #navigation ul.nav > li.parent:hover a:after { color: @tailormade-blue; }
+#header #navigation ul.nav > li.parent:hover a::before { display: none; }
 
 
 /*-------------------------------------------------------*

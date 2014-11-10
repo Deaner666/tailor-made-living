@@ -292,6 +292,11 @@ Masthead
 #header #navigation ul.nav ul li a {
   text-align: left;
   padding: 2% 0 0 5%;
+  -webkit-border-radius: 4px !important;
+  border-radius: 4px !important;
+  -moz-background-clip: padding !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
   color: #212d58;
 }
 #header #navigation ul.nav ul li a:hover {
@@ -309,6 +314,9 @@ Masthead
 }
 #header #navigation ul.nav > li.parent:hover a:after {
   color: #212d58;
+}
+#header #navigation ul.nav > li.parent:hover a::before {
+  display: none;
 }
 /*-------------------------------------------------------*
 Content

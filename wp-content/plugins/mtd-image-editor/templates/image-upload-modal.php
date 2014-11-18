@@ -100,6 +100,21 @@
 					</div>
 			<?php
 					break;
+				case 'foamex-prints' || 'dibond-prints':
+			?>
+					<div class="image-dimensions-field">
+						<h3>Your Print Dimensions</h3>
+						<div class="wall-width">
+							<label for="modal-width">Width (cm)</label>
+							<input id="modal-width" class="sync-width-modal" type="number" step="any" />
+						</div>
+						<div class="wall-height">
+							<label for="modal-height">Height (cm)</label>
+							<input id="modal-height" class="sync-height-modal" type="number" step="any" />
+						</div>
+					</div>
+			<?php 
+					break;
 			}
 			?>
 

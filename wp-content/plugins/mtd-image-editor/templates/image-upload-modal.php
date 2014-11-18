@@ -100,7 +100,7 @@
 					</div>
 			<?php
 					break;
-				case 'foamex-prints' || 'dibond-prints':
+				case 'foamex-prints' || 'dibond-prints' || 'personalised-posters':
 			?>
 					<div class="image-dimensions-field">
 						<h3>Your Print Dimensions</h3>
